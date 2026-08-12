@@ -93,6 +93,12 @@
   </div>
 </div>
 
+<!-- ===== LIGHTBOX IMAGE ===== -->
+<div id="lightbox" class="hidden fixed inset-0 z-[70] bg-black/90 backdrop-blur-sm items-center justify-center p-6" onclick="closeImg()">
+  <img id="lightbox-img" src="" alt="" class="max-w-full max-h-[85vh] object-contain rounded-2xl bg-white">
+  <button class="absolute top-5 right-5 bg-white/10 hover:bg-white/20 active:scale-90 transition text-white font-black w-11 h-11 rounded-full text-xl" onclick="event.stopPropagation();closeImg()">✕</button>
+</div>
+
 <!-- ===== TOAST ===== -->
 <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-[60] bg-green-600 text-white font-bold px-5 py-3 rounded-full shadow-2xl opacity-0 pointer-events-none transition-all duration-300 text-sm"></div>
 
@@ -127,6 +133,52 @@ const DATA = {
     {"nom":"Hip Thrust","emoji":"🍑","type":"compound","series":3,"reps":"10-12","repos":"90s","repos_s":90,"rir":2,"tempo":"2011","last_performance":{"note":"Nouvel exercice — point faible fessiers"},"objectif_next":"Première session — calibration","notes":"POINT FAIBLE — fessiers. Ajouté suite analyse physique","point_faible":true}
   ]}
 };
+
+// ====================== ILLUSTRATIONS EXERCICES ======================
+// Photos réelles (free-exercise-db, open source, CC0) — testées HTTP 200
+const IMG_BASE = "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/";
+const IMG_MAP = {
+  "Développé couché barre":            "Barbell_Bench_Press_-_Medium_Grip/0.jpg",
+  "Développé incliné haltères":        "Incline_Dumbbell_Press/0.jpg",
+  "Dips assistés (prise large)":       "Dips_-_Triceps_Version/0.jpg",
+  "Dips assistés":                     "Dips_-_Triceps_Version/0.jpg",
+  "Élévations latérales haltères":     "Side_Lateral_Raise/0.jpg",
+  "Extensions triceps poulie haute":   "Triceps_Pushdown/0.jpg",
+  "Tirage vertical (lat pulldown)":    "Wide-Grip_Lat_Pulldown/0.jpg",
+  "Rowing barre droite":               "Bent_Over_Barbell_Row/0.jpg",
+  "Tirage horizontal poulie basse":    "Seated_Cable_Rows/0.jpg",
+  "Curl barre EZ (pupitre isolé)":     "Preacher_Curl/0.jpg",
+  "Curl marteau haltères":             "Hammer_Curls/0.jpg",
+  "Squat Smith Machine":               "Smith_Machine_Squat/0.jpg",
+  "Leg Press assis":                   "Leg_Press/0.jpg",
+  "Romanian Deadlift barre":           "Romanian_Deadlift/0.jpg",
+  "Leg Curl allongé":                  "Lying_Leg_Curls/0.jpg",
+  "Leg Extension":                     "Leg_Extensions/0.jpg",
+  "Hip Thrust":                        "Barbell_Hip_Thrust/0.jpg"
+};
+function imgUrl(nom){ const p = IMG_MAP[nom]; return p ? IMG_BASE + p : ''; }
+
+// Fallback si l'image ne charge pas → emoji + nom
+function imgFail(el){
+  const box = el.parentElement;
+  box.classList.remove('bg-white');
+  box.classList.add('bg-card2/60');
+  box.innerHTML = `<div class="flex flex-col items-center justify-center gap-1 px-1 text-center">
+    <div class="text-4xl">${el.dataset.emoji||'🏋️'}</div>
+    <div class="text-[9px] leading-tight text-gray-500">${el.dataset.nom||''}</div>
+  </div>`;
+}
+
+// Lightbox — clic pour agrandir
+function openImg(src){
+  const lb = document.getElementById('lightbox');
+  document.getElementById('lightbox-img').src = src;
+  lb.classList.remove('hidden'); lb.classList.add('flex');
+}
+function closeImg(){
+  const lb = document.getElementById('lightbox');
+  lb.classList.add('hidden'); lb.classList.remove('flex');
+}
 
 // ====================== ROUTAGE ======================
 const params = new URLSearchParams(location.search);
@@ -221,7 +273,12 @@ function renderApp(key){
 
     card.innerHTML = `
       <div class="flex items-stretch">
-        <div class="w-20 shrink-0 bg-card2/60 flex items-center justify-center text-4xl">${ex.emoji||'🏋️'}</div>
+        <div class="w-28 shrink-0 bg-white flex items-center justify-center overflow-hidden p-1">
+          <img src="${imgUrl(ex.nom)}" alt="${ex.nom}" loading="lazy"
+            data-emoji="${ex.emoji||'🏋️'}" data-nom="${ex.nom}"
+            onclick="openImg(this.src)" onerror="imgFail(this)"
+            class="w-full object-contain cursor-zoom-in" style="max-height:120px">
+        </div>
         <div class="flex-1 p-3 min-w-0">
           <div class="flex items-start justify-between gap-2">
             <h2 class="font-bold text-base leading-tight">${ex.nom}</h2>
