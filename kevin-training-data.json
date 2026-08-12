@@ -52,10 +52,11 @@
       "Push B: Dips assistance réduite 35→30kg, élévations latérales série 3 stabilisée (8→10)"
     ],
     "PULL": [
-      "Chute de performance au 3e set sur lat pulldown (10-10-6)",
-      "Trajectoire inconsistante sur barbell rows (poitrine vs nombril)",
-      "Dropset hammer curl pollue les données de progression",
-      "Curl barre EZ: ~28kg — à progressioner vers 30kg"
+      "Lat pulldown: S3 réglé (6→10 reps à 77kg), objectif désormais 4 séries pleines (S4: 8)",
+      "Rowing barre: trajectoire nombril mieux tenue (12-12), S3 en légère baisse (11→9)",
+      "Tirage horizontal: baisse générale à 45kg (12-10-8 → 10-9-8) — stabiliser avant progression",
+      "Curl barre EZ: S1 amélioré (8→9) mais S3 s'effondre (8→5) → gérer la fatigue de fin de série",
+      "Dropset hammer curl persiste (15→10kg) et pollue les données — viser 15kg×5-5-5 stable"
     ],
     "LEGS": [
       "Squat barre en phase d'apprentissage technique — ne pas traiter comme charge réelle",
@@ -184,9 +185,9 @@
           "repos": "2 min",
           "rir": 1,
           "tempo": "2011",
-          "last_performance": { "poids": [77, 77, 77, 57], "reps": [10, 10, 6, 15] },
-          "objectif_next": "77kg×10-10-8 (au lieu de 10-10-6)",
-          "notes": "POINT FAIBLE — largeur dos. Prise large",
+          "last_performance": { "poids": [77, 77, 77, 77], "reps": [10, 10, 10, 7] },
+          "objectif_next": "77kg×10-10-10-8 (S4: 8 reps)",
+          "notes": "POINT FAIBLE — largeur dos. Prise large. Gros progrès S3 (6→10)",
           "point_faible": true
         },
         {
@@ -197,8 +198,8 @@
           "repos": "2 min",
           "rir": 1,
           "tempo": "2010",
-          "last_performance": { "poids": [40, 40, 40], "reps": [10, 12, 11], "trajectoire": ["pecs", "nombril", "mixte"] },
-          "objectif_next": "40kg×12-12-12, GARDER zone nombril fixe",
+          "last_performance": { "poids": [40, 40, 40], "reps": [12, 12, 9], "trajectoire": ["nombril", "nombril", "mixte"] },
+          "objectif_next": "40kg×12-12-10 (progression S3 vers 10)",
           "notes": "Trajectoire inconsistante — standardiser vers nombril"
         },
         {
@@ -209,9 +210,9 @@
           "repos": "90s",
           "rir": 2,
           "tempo": "2011",
-          "last_performance": { "poids": [40, 45, 45], "reps": [12, 10, 8] },
-          "objectif_next": "45kg×10-10-9 (au lieu de 8 sur série 3)",
-          "notes": ""
+          "last_performance": { "poids": [45, 45, 45], "reps": [10, 9, 8] },
+          "objectif_next": "45kg×10-9-8 (stabiliser avant de progresser)",
+          "notes": "Baisse générale vs dernière (12-10-8) — stabiliser à 45kg"
         },
         {
           "nom": "Curl barre EZ (pupitre isolé)",
@@ -221,9 +222,9 @@
           "repos": "60s",
           "rir": 1,
           "tempo": "2011",
-          "last_performance": { "poids": [28, 28, 28], "reps": [8, 8, 8] },
-          "objectif_next": "28-30kg×9-9-9 si RIR facile",
-          "notes": "POINT FAIBLE — densité bras",
+          "last_performance": { "poids": [28, 28, 28], "reps": [9, 8, 5] },
+          "objectif_next": "28kg×9-8-8 (récupérer S3)",
+          "notes": "POINT FAIBLE — densité bras. S3 en chute (8→5) : fatigue ou technique",
           "point_faible": true
         },
         {
@@ -234,8 +235,8 @@
           "repos": "60s",
           "rir": 2,
           "tempo": "2011",
-          "last_performance": { "details": "15kg×4→10kg×3 (dropset), 10kg×9, 10kg×6" },
-          "objectif_next": "15kg×5-5-5 sans dropset (teste poids stable)",
+          "last_performance": { "details": "15kg×4, 10kg×7, 10kg×6 (dropset)" },
+          "objectif_next": "15kg×5-5-5 sans dropset (S1 raté : 4 au lieu de 5)",
           "notes": "Dropset pollue les données — utiliser poids stable",
           "point_faible": true
         }
@@ -321,12 +322,23 @@
     }
   },
   "derniere_seance": {
-    "type": "PUSH_B",
-    "date": "il y a 19 heures",
+    "type": "PULL_A",
+    "date": "12/08/2026",
     "exercices_complets": true,
-    "prochaine_seance": "PULL_A"
+    "prochaine_seance": "LEGS"
   },
   "historique_sessions": [
+    {
+      "date": "12/08/2026",
+      "type": "PULL_A",
+      "resultats": {
+        "Tirage vertical": "77kg×10, 77kg×10, 77kg×10, 77kg×7",
+        "Rowing barre": "40kg×12, 40kg×12, 40kg×9",
+        "Tirage horizontal": "45kg×10, 45kg×9, 45kg×8",
+        "Curl barre EZ": "28kg×9, 28kg×8, 28kg×5",
+        "Curl marteau": "15kg×4, 10kg×7, 10kg×6 (dropset)"
+      }
+    },
     {
       "date": "récent (19h)",
       "type": "PUSH_B",
