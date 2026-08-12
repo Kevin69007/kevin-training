@@ -1,0 +1,372 @@
+{
+  "profil": {
+    "nom": "Kevin",
+    "taille": "177cm",
+    "poids": "74kg",
+    "age": 36,
+    "activite": "sédentaire",
+    "tdee": 2500,
+    "objectif_calories": 2000,
+    "macros": { "proteines": 160, "glucides": 195, "lipides": 65 },
+    "supplementation": {
+      "creatine": "5g/jour — obligatoire",
+      "caffeine": "200-400mg pré-training — optionnelle",
+      "whey": "si apport protéique insuffisant"
+    }
+  },
+  "programme": {
+    "split": ["PUSH_A", "PULL_A", "LEGS", "PUSH_B"],
+    "semaine_type": {
+      "lundi": "repos",
+      "mardi": "PUSH_A",
+      "mercredi": "PULL_A",
+      "jeudi": "LEGS",
+      "vendredi": "PUSH_B",
+      "samedi": "marche ou repos",
+      "dimanche": "repos"
+    },
+    "systeme_rir": {
+      "RIR_0": "échec total",
+      "RIR_1": "1 rep de plus possible max",
+      "RIR_2": "2 reps de plus possible max",
+      "obligation": "RIR 0-2 sur tous les exercices pour préserver la masse musculaire en déficit calorique"
+    }
+  },
+  "points_faibles": [
+    { "zone": "Épaules (deltoïde latéral)", "priorite": "haute", "action": "augmenter fréquence/volume élévations latérales (2x/semaine min)", "impact": "V-taper, largeur épaules" },
+    { "zone": "Dos (largeur)", "priorite": "haute", "action": "prioriser tirage vertical prise large, pull-over", "impact": "silhouette en V" },
+    { "zone": "Fessiers", "priorite": "haute", "action": "ajouter hip thrust + volume ciblé fessiers sur séances Legs", "impact": "volume visible habillé" },
+    { "zone": "Bras (biceps/triceps)", "priorite": "moyenne", "action": "gagner en densité, éviter momentum", "impact": "harmonie générale" },
+    { "zone": "Abdominaux/taille", "priorite": "nutrition", "action": "déficit calorique strict — peser fromage/avocat", "impact": "révélation base musculaire" },
+    { "zone": "Jambes (volume)", "priorite": "moyenne", "action": "épaissir quadriceps + fessiers", "impact": "proportion globale" }
+  ],
+  "points_forts": [
+    "Jambes bien proportionnées en muscle visible",
+    "Posture correcte, bonne symétrie gauche/droite"
+  ],
+  "coaching_notes": {
+    "PUSH": [
+      "Incohérence de charge départ sur incline dumbbell press (20kg×7 puis 15kg×12)",
+      "Variance de reps sur cable tricep extensions (18→11 = momentum probable sur 1er set)",
+      "Signal de fatigue sur bench press en dernier set (70kg×7 RIR1)",
+      "Push B: Dips assistance réduite 35→30kg, élévations latérales série 3 stabilisée (8→10)"
+    ],
+    "PULL": [
+      "Chute de performance au 3e set sur lat pulldown (10-10-6)",
+      "Trajectoire inconsistante sur barbell rows (poitrine vs nombril)",
+      "Dropset hammer curl pollue les données de progression",
+      "Curl barre EZ: ~28kg — à progressioner vers 30kg"
+    ],
+    "LEGS": [
+      "Squat barre en phase d'apprentissage technique — ne pas traiter comme charge réelle",
+      "Leg Extension ordre non standard (passé en premier)",
+      "Leg Press en cours — à finaliser",
+      "Ajouter hip thrust pour fessiers (point faible identifié)"
+    ]
+  },
+  "seances": {
+    "PUSH_A": {
+      "nom": "Push A",
+      "exercices": [
+        {
+          "nom": "Développé couché barre",
+          "type": "compound",
+          "series": 4,
+          "reps": "8-12",
+          "repos": "2-3 min",
+          "rir": 1,
+          "tempo": "3010",
+          "last_performance": { "poids": [60, 70, 70, 70], "reps": [12, 10, 8, 7], "rir_estime": 1 },
+          "objectif_next": "70kg×8-9 sur séries 3-4",
+          "notes": "Signal de fatigue sur dernier set"
+        },
+        {
+          "nom": "Développé incliné haltères",
+          "type": "compound",
+          "series": 3,
+          "reps": "8-12",
+          "repos": "2 min",
+          "rir": 1,
+          "tempo": "3010",
+          "last_performance": { "poids": [20, 15, 15], "reps": [7, 12, 12] },
+          "objectif_next": "15kg×12-12-12 (structure régulière)",
+          "notes": "Incohérence charge départ 20kg→15kg — standardiser"
+        },
+        {
+          "nom": "Dips assistés (prise large)",
+          "type": "compound",
+          "series": 3,
+          "reps": "10",
+          "repos": "90s",
+          "rir": 2,
+          "tempo": "2010",
+          "last_performance": { "assistance": [35, 35, 35], "reps": [10, 10, 10] },
+          "objectif_next": "Réduire assistance à 30kg si RIR facile",
+          "notes": ""
+        },
+        {
+          "nom": "Élévations latérales haltères",
+          "type": "isolation",
+          "series": 3,
+          "reps": "10-12",
+          "repos": "60s",
+          "rir": 2,
+          "tempo": "2011",
+          "last_performance": { "poids": [5, 5, 5], "reps": [12, 12, 10] },
+          "objectif_next": "5kg×12-12-12 (stabiliser série 3)",
+          "notes": "POINT FAIBLE — priorité épaules. Volume 2x/semaine",
+          "point_faible": true
+        },
+        {
+          "nom": "Extensions triceps poulie haute",
+          "type": "isolation",
+          "series": 2,
+          "reps": "15",
+          "repos": "60s",
+          "rir": 2,
+          "tempo": "2011",
+          "last_performance": { "poids": [45, 45], "reps": [18, 11] },
+          "objectif_next": "45kg×15-15 (sans élan, sans gap)",
+          "notes": "Momentum probable sur 1er set — contrôle strict"
+        }
+      ]
+    },
+    "PUSH_B": {
+      "nom": "Push B",
+      "exercices": [
+        {
+          "nom": "Dips assistés",
+          "type": "compound",
+          "series": 3,
+          "reps": "10",
+          "repos": "90s",
+          "rir": 2,
+          "tempo": "2010",
+          "last_performance": { "assistance": [30, 30, 30], "reps": [10, 10, 10] },
+          "objectif_next": "Assistance 25kg si RIR 2 facile",
+          "notes": "Progression de force confirmée (35→30kg)"
+        },
+        {
+          "nom": "Élévations latérales haltères",
+          "type": "isolation",
+          "series": 3,
+          "reps": "10-12",
+          "repos": "60s",
+          "rir": 2,
+          "tempo": "2011",
+          "last_performance": { "poids": [5, 5, 5], "reps": [12, 12, 10] },
+          "objectif_next": "5kg×12-12-12",
+          "notes": "POINT FAIBLE — priorité épaules",
+          "point_faible": true
+        },
+        {
+          "nom": "Extensions triceps poulie haute",
+          "type": "isolation",
+          "series": 2,
+          "reps": "15",
+          "repos": "60s",
+          "rir": 2,
+          "tempo": "2011",
+          "last_performance": { "poids": [45, 45], "reps": [15, 15] },
+          "objectif_next": "45kg×15-15 (maintenir)",
+          "notes": "Objectif atteint, parfaitement stable"
+        }
+      ]
+    },
+    "PULL_A": {
+      "nom": "Pull A",
+      "exercices": [
+        {
+          "nom": "Tirage vertical (lat pulldown)",
+          "type": "compound",
+          "series": 4,
+          "reps": "8-12",
+          "repos": "2 min",
+          "rir": 1,
+          "tempo": "2011",
+          "last_performance": { "poids": [77, 77, 77, 57], "reps": [10, 10, 6, 15] },
+          "objectif_next": "77kg×10-10-8 (au lieu de 10-10-6)",
+          "notes": "POINT FAIBLE — largeur dos. Prise large",
+          "point_faible": true
+        },
+        {
+          "nom": "Rowing barre droite",
+          "type": "compound",
+          "series": 3,
+          "reps": "10-12",
+          "repos": "2 min",
+          "rir": 1,
+          "tempo": "2010",
+          "last_performance": { "poids": [40, 40, 40], "reps": [10, 12, 11], "trajectoire": ["pecs", "nombril", "mixte"] },
+          "objectif_next": "40kg×12-12-12, GARDER zone nombril fixe",
+          "notes": "Trajectoire inconsistante — standardiser vers nombril"
+        },
+        {
+          "nom": "Tirage horizontal poulie basse",
+          "type": "compound",
+          "series": 3,
+          "reps": "8-12",
+          "repos": "90s",
+          "rir": 2,
+          "tempo": "2011",
+          "last_performance": { "poids": [40, 45, 45], "reps": [12, 10, 8] },
+          "objectif_next": "45kg×10-10-9 (au lieu de 8 sur série 3)",
+          "notes": ""
+        },
+        {
+          "nom": "Curl barre EZ (pupitre isolé)",
+          "type": "isolation",
+          "series": 3,
+          "reps": "8",
+          "repos": "60s",
+          "rir": 1,
+          "tempo": "2011",
+          "last_performance": { "poids": [28, 28, 28], "reps": [8, 8, 8] },
+          "objectif_next": "28-30kg×9-9-9 si RIR facile",
+          "notes": "POINT FAIBLE — densité bras",
+          "point_faible": true
+        },
+        {
+          "nom": "Curl marteau haltères",
+          "type": "isolation",
+          "series": 3,
+          "reps": "8-10",
+          "repos": "60s",
+          "rir": 2,
+          "tempo": "2011",
+          "last_performance": { "details": "15kg×4→10kg×3 (dropset), 10kg×9, 10kg×6" },
+          "objectif_next": "15kg×5-5-5 sans dropset (teste poids stable)",
+          "notes": "Dropset pollue les données — utiliser poids stable",
+          "point_faible": true
+        }
+      ]
+    },
+    "LEGS": {
+      "nom": "Legs",
+      "exercices": [
+        {
+          "nom": "Squat Smith Machine",
+          "type": "compound",
+          "series": 4,
+          "reps": "8-12",
+          "repos": "2-3 min",
+          "rir": 1,
+          "tempo": "3010",
+          "last_performance": { "note": "Session calibration technique — charges légères" },
+          "objectif_next": "Stabiliser technique avant progression charge",
+          "notes": "Première session trackée — apprentissage technique (profondeur, alignement genoux, colonne neutre). Pieds légèrement avancés devant l'axe, dos neutre"
+        },
+        {
+          "nom": "Leg Press assis",
+          "type": "compound",
+          "series": 3,
+          "reps": "10-15",
+          "repos": "90-120s",
+          "rir": 2,
+          "tempo": "2011",
+          "last_performance": { "note": "En cours — pas encore finalisé" },
+          "objectif_next": "Finaliser et logger la session",
+          "notes": "Pieds centrés largeur épaules, jamais de verrouillage genoux"
+        },
+        {
+          "nom": "Romanian Deadlift barre",
+          "type": "compound",
+          "series": 3,
+          "reps": "8-12",
+          "repos": "2 min",
+          "rir": 1,
+          "tempo": "3010",
+          "last_performance": { "note": "Pas encore de données" },
+          "objectif_next": "Première session — calibration",
+          "notes": "Genoux quasi fixes, barre collée aux jambes, dos jamais arrondi"
+        },
+        {
+          "nom": "Leg Curl allongé",
+          "type": "isolation",
+          "series": 3,
+          "reps": "12-15",
+          "repos": "60-90s",
+          "rir": 2,
+          "tempo": "2011",
+          "last_performance": { "poids": [55, 55, 55], "reps": [8, 7, 6] },
+          "objectif_next": "55kg×10-8-8 (progression reps)",
+          "notes": "Bassin plaqué contre le coussin. 1s contraction en haut"
+        },
+        {
+          "nom": "Leg Extension",
+          "type": "isolation",
+          "series": 2,
+          "reps": "15-20",
+          "repos": "60s",
+          "rir": 2,
+          "tempo": "contrôlé",
+          "last_performance": { "poids": [80, 100, 100], "reps": [13, 10, 10] },
+          "objectif_next": "100kg×12-12 (progression reps)",
+          "notes": "Pas de blocage brutal en extension totale. Ordre non standard (passé en premier)"
+        },
+        {
+          "nom": "Hip Thrust",
+          "type": "compound",
+          "series": 3,
+          "reps": "10-12",
+          "repos": "90s",
+          "rir": 2,
+          "tempo": "2011",
+          "last_performance": { "note": "Nouvel exercice — ajouté pour point faible fessiers" },
+          "objectif_next": "Première session — calibration",
+          "notes": "POINT FAIBLE — fessiers. Ajouté suite analyse physique",
+          "point_faible": true
+        }
+      ]
+    }
+  },
+  "derniere_seance": {
+    "type": "PUSH_B",
+    "date": "il y a 19 heures",
+    "exercices_complets": true,
+    "prochaine_seance": "PULL_A"
+  },
+  "historique_sessions": [
+    {
+      "date": "récent (19h)",
+      "type": "PUSH_B",
+      "resultats": {
+        "Dips": "assistance 30kg × 10-10-10",
+        "Élévations latérales": "5kg × 12-12-10",
+        "Extensions triceps": "45kg × 15-15"
+      }
+    },
+    {
+      "date": "il y a 4 jours",
+      "type": "LEGS",
+      "resultats": {
+        "Leg Extension": "80kg×13, 100kg×10, 100kg×10",
+        "Squat": "Calibration technique — charges légères",
+        "Leg Curl": "55kg×8, 55kg×7, 55kg×6",
+        "Leg Press": "En cours — non finalisé"
+      }
+    },
+    {
+      "date": "il y a 5 jours",
+      "type": "PULL_A",
+      "resultats": {
+        "Tirage vertical": "77kg×10, 77kg×10, 77kg×6, 57kg×15",
+        "Rowing barre": "40kg×10, 40kg×12, 40kg×11",
+        "Tirage horizontal": "40kg×12, 45kg×10, 45kg×8",
+        "Curl barre EZ": "~28kg×8, ×8, ×8",
+        "Curl marteau": "15kg×4→10kg×3 (dropset), 10kg×9, 10kg×6"
+      }
+    },
+    {
+      "date": "il y a 5 jours",
+      "type": "PUSH_A",
+      "resultats": {
+        "Développé couché": "60kg×12, 70kg×10, 70kg×8, 70kg×7",
+        "Développé incliné": "20kg×7, 15kg×12, 15kg×12",
+        "Dips": "assistance 35kg × 10-10-10",
+        "Élévations latérales": "5kg×12, 5kg×12, 5kg×8",
+        "Extensions triceps": "45kg×18, 45kg×11"
+      }
+    }
+  ]
+}
