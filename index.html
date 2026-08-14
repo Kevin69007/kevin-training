@@ -76,7 +76,7 @@
 <div id="timer" class="hidden fixed inset-0 z-50 bg-black/92 backdrop-blur-sm flex flex-col items-center justify-center px-6">
   <p id="timer-exo" class="text-gray-400 text-sm mb-2 text-center"></p>
   <p class="text-accent font-bold uppercase tracking-widest text-xs mb-2">Repos</p>
-  <p id="timer-pause" class="hidden text-amber-400 font-bold text-sm mb-3 animate-pulse">⏸ En pause (appli en arrière-plan)</p>
+  <p id="timer-pause" class="hidden text-amber-400 font-bold text-sm mb-3 animate-pulse">⏱ Le décompte continue en arrière-plan</p>
   <div class="relative flex items-center justify-center mb-10">
     <div class="absolute w-64 h-64 rounded-full bg-accent/20 timer-ring"></div>
     <svg class="w-64 h-64 -rotate-90" viewBox="0 0 100 100">
@@ -169,11 +169,26 @@ function galleryUrls(nom){
 }
 const GALLERY_LABELS = ['Départ', 'Exécution'];
 
-// Fallback si une photo ne charge pas → emoji + nom
+// Fallback si une photo de la galerie ne charge pas.
+// Si une seule des deux vues manque (ex: 1.jpg en 404) → on retire proprement la vignette
+// et l'autre vue (0.jpg) occupe toute la largeur, sans casser la mise en page.
+// Si plus aucune photo ne charge → emoji + nom (mode offline).
 function imgFail(el){
-  const box = el.closest('figure') || el.parentElement;
-  box.classList.remove('bg-white'); box.classList.add('bg-card2/60');
-  box.innerHTML = `<div class="flex flex-col items-center justify-center gap-1 px-1 text-center" style="height:120px">
+  const fig = el.closest('figure') || el.parentElement;
+  const grid = fig.parentElement;
+  const remaining = grid ? grid.querySelectorAll('figure').length : 1;
+  if(remaining > 1){
+    // Il reste au moins une autre vue : on supprime la vignette cassée et on repasse en 1 colonne
+    fig.remove();
+    if(grid){
+      grid.classList.remove('grid-cols-2');
+      grid.classList.add('grid-cols-1');
+    }
+    return;
+  }
+  // Dernière vue → fallback emoji propre
+  fig.classList.remove('bg-white'); fig.classList.add('bg-card2/60');
+  fig.innerHTML = `<div class="flex flex-col items-center justify-center gap-1 px-1 text-center" style="height:120px">
     <div class="text-4xl">${el.dataset.emoji||'🏋️'}</div>
     <div class="text-[9px] leading-tight text-gray-500">${el.dataset.nom||''}</div>
   </div>`;
@@ -189,24 +204,29 @@ const MUSCLE_DB = {
   10:{n:"Quadriceps",v:"front"}, 11:{n:"Ischios",v:"back"}, 12:{n:"Dorsaux",v:"back"},
   13:{n:"Brachial",v:"front"}
 };
+// Mapping muscle→exercice cohérent pour TOUT le programme (ordre = primaire → secondaires).
+// wger n'expose que le deltoïde ANTÉRIEUR (id 2) : on l'utilise comme plus proche
+// dispo pour "deltoïde antérieur" (développés/dips) ET comme proxy épaule pour les
+// élévations latérales (pas de deltoïde latéral isolé chez wger). Trapèzes (9) sert de
+// proxy "haut du dos / deltoïde postérieur" sur le rowing.
 const MUSCLE_MAP = {
-  "Développé couché barre":[4,2,5],
-  "Développé incliné haltères":[4,2,5],
-  "Dips assistés (prise large)":[4,5,2],
-  "Dips assistés":[5,4,2],
-  "Élévations latérales haltères":[2],
-  "Extensions triceps poulie haute":[5],
-  "Tirage vertical (lat pulldown)":[12,1],
-  "Rowing barre droite":[12,9,1],
-  "Tirage horizontal poulie basse":[12,9,1],
-  "Curl barre EZ (pupitre isolé)":[1,13],
-  "Curl marteau haltères":[1,13],
-  "Squat Smith Machine":[10,8],
-  "Leg Press assis":[10,8],
-  "Romanian Deadlift barre":[11,8],
-  "Leg Curl allongé":[11],
-  "Leg Extension":[10],
-  "Hip Thrust":[8]
+  "Développé couché barre":[4,5,2],            // pectoraux + triceps + deltoïde ant.
+  "Développé incliné haltères":[4,5,2],        // pectoraux + triceps + deltoïde ant.
+  "Dips assistés (prise large)":[5,4,2],       // triceps + pectoraux + deltoïde ant.
+  "Dips assistés":[5,4,2],                     // triceps + pectoraux + deltoïde ant.
+  "Élévations latérales haltères":[2],         // deltoïde (latéral → plus proche dispo)
+  "Extensions triceps poulie haute":[5],       // triceps
+  "Tirage vertical (lat pulldown)":[12,1],     // grand dorsal + biceps
+  "Rowing barre droite":[12,1,9],              // dorsaux + biceps + trapèzes (haut du dos)
+  "Tirage horizontal poulie basse":[12,1],     // dorsaux + biceps
+  "Curl barre EZ (pupitre isolé)":[1],         // biceps
+  "Curl marteau haltères":[1,13],              // biceps + brachial antérieur
+  "Squat Smith Machine":[10,8],                // quadriceps + fessiers
+  "Leg Press assis":[10,8],                    // quadriceps + fessiers
+  "Romanian Deadlift barre":[11,8],            // ischio-jambiers + fessiers
+  "Leg Curl allongé":[11],                     // ischio-jambiers
+  "Leg Extension":[10],                        // quadriceps
+  "Hip Thrust":[8]                             // fessiers
 };
 function muscleFigHTML(id){
   const m = MUSCLE_DB[id]; if(!m) return '';
@@ -331,6 +351,7 @@ function serieRowHTML(ex, si, defP, unit, bonus){
 // ---- Câblage d'un bouton OK (valider une série → glow + progression + timer) ----
 function wireOkBtn(btn){
   btn.addEventListener('click', ()=>{
+    ensureNotifyPermission();
     const row = btn.closest('[data-serie]');
     row.classList.add('done-glow','rounded-xl','p-1','-m-1');
     btn.textContent = '✓';
@@ -464,7 +485,7 @@ function renderApp(key){
   });
 
   document.getElementById('copyBtn').addEventListener('click', copyResults);
-  document.getElementById('finishBtn').addEventListener('click', copyResults);
+  document.getElementById('finishBtn').addEventListener('click', ()=>{ ensureNotifyPermission(); copyResults(); });
   updateProgress();
 }
 
@@ -474,16 +495,16 @@ function updateProgress(){
   document.getElementById('progress-bar').style.width = (total?done/total*100:0)+'%';
 }
 
-// ====================== TIMER (basé sur un timestamp de fin) ======================
-// Robuste au throttling d'arrière-plan : on calcule le temps restant à partir de
-// Date.now() à chaque tick (pas de décrément d'un compteur). Quand la page devient
-// cachée (changement d'onglet / verrouillage), le timer se met EN PAUSE (gèle le
-// restant) et reprend au retour. Le son/vibration ne sonnent qu'à zéro ET page visible.
+// ====================== TIMER (basé sur un timestamp de fin absolu) ======================
+// Le repos est ancré sur un timestamp de fin (timerEndAt = Date.now()+durée). Le temps
+// restant est TOUJOURS recalculé depuis Date.now() : le compteur ne peut donc jamais
+// dériver, même si iOS/Safari gèle le JS quand l'appli passe en arrière-plan ou que le
+// téléphone se verrouille. RATTRAPAGE : dès que la page redevient visible, on recalcule ;
+// si le repos a réellement expiré pendant l'absence, le timer se TERMINE immédiatement
+// (beep + vibration + GO). Sinon il affiche le vrai restant. → jamais un mauvais compte.
 let timerId=null;          // id du setInterval de repeinture
-let timerEndAt=0;          // timestamp (ms) de fin quand le timer tourne
+let timerEndAt=0;          // timestamp (ms) de fin
 let timerTotal=0;          // durée totale (s) pour l'anneau
-let timerPaused=false;     // en pause (page cachée) ?
-let timerFrozen=0;         // secondes restantes gelées pendant la pause
 let timerDone=false;       // a déjà sonné (évite double déclenchement)
 const timerEl = document.getElementById('timer');
 const timerNum = document.getElementById('timer-num');
@@ -493,10 +514,8 @@ const CIRC = 283;
 
 function fmtTime(s){ const m=Math.floor(s/60), r=s%60; return `${m}:${String(r).padStart(2,'0')}`; }
 
-// secondes restantes (float) selon l'état
-function timerMsLeft(){
-  return timerPaused ? timerFrozen*1000 : (timerEndAt - Date.now());
-}
+// millisecondes restantes, toujours dérivées de l'horloge réelle
+function timerMsLeft(){ return timerEndAt - Date.now(); }
 
 function paintTimer(){
   const msLeft = Math.max(0, timerMsLeft());
@@ -504,11 +523,10 @@ function paintTimer(){
   if(!timerDone) timerNum.textContent = fmtTime(secDisp);
   const frac = timerTotal ? (msLeft/1000)/timerTotal : 0;
   timerCircle.style.strokeDashoffset = CIRC*(1 - Math.max(0, Math.min(1, frac)));
-  timerPauseEl.classList.toggle('hidden', !timerPaused);
 }
 
 function tick(){
-  if(timerPaused){ paintTimer(); return; }
+  if(timerDone) return;
   if(timerMsLeft() <= 0){ paintTimer(); endTimer(); return; }
   paintTimer();
 }
@@ -517,11 +535,10 @@ function startTimer(seconds, exoName){
   seconds = seconds || 90;
   timerTotal = seconds;
   timerEndAt = Date.now() + seconds*1000;
-  timerPaused = false; timerDone = false; timerFrozen = seconds;
+  timerDone = false;
   document.getElementById('timer-exo').textContent = exoName || '';
+  timerPauseEl.classList.add('hidden');
   timerEl.classList.remove('hidden'); timerEl.classList.add('flex');
-  // Si la page est déjà cachée au lancement, on démarre en pause
-  if(document.hidden) pauseTimer();
   paintTimer();
   clearInterval(timerId);
   timerId = setInterval(tick, 250);
@@ -531,24 +548,8 @@ function timerActive(){
   return !timerEl.classList.contains('hidden');
 }
 
-function pauseTimer(){
-  if(timerPaused || timerDone) return;
-  timerFrozen = Math.max(0, timerMsLeft()/1000);
-  timerPaused = true;
-  paintTimer();
-}
-function resumeTimer(){
-  if(!timerPaused || timerDone) return;
-  timerEndAt = Date.now() + timerFrozen*1000;
-  timerPaused = false;
-  // Au retour, si le temps était déjà écoulé, on sonne maintenant (page visible)
-  if(timerMsLeft() <= 0) endTimer();
-  else paintTimer();
-}
-
 function closeTimer(){
   clearInterval(timerId); timerId=null;
-  timerPaused=false;
   timerEl.classList.add('hidden'); timerEl.classList.remove('flex');
   timerPauseEl.classList.add('hidden');
 }
@@ -558,27 +559,65 @@ function endTimer(){
   timerDone = true;
   clearInterval(timerId); timerId=null;
   beep(); vibrate([200,100,200,100,300]);
+  notifyRestDone();
   timerNum.textContent = 'GO 💥';
+  timerPauseEl.classList.add('hidden');
   timerCircle.style.strokeDashoffset = 0;
-  setTimeout(closeTimer, 1200);
+  setTimeout(closeTimer, 1400);
 }
 
 document.getElementById('timer-skip').addEventListener('click', closeTimer);
 document.getElementById('timer-add').addEventListener('click', ()=>{
   if(timerDone) return;
   timerTotal += 30;
-  if(timerPaused){ timerFrozen += 30; }
-  else { timerEndAt += 30000; }
+  timerEndAt += 30000;
   paintTimer();
 });
 
-// Pause quand la page devient cachée, reprise au retour
-document.addEventListener('visibilitychange', ()=>{
+// Rattrapage au retour d'arrière-plan : on recalcule sur l'horloge réelle.
+function syncTimer(){
   if(!timerActive() || timerDone) return;
-  if(document.hidden) pauseTimer(); else resumeTimer();
+  timerPauseEl.classList.add('hidden');
+  if(timerMsLeft() <= 0) endTimer();   // le repos a expiré pendant l'absence → GO tout de suite
+  else paintTimer();
+}
+document.addEventListener('visibilitychange', ()=>{
+  if(document.hidden){
+    // JS va être gelé par iOS : on signale juste que le décompte continue sur l'horloge réelle
+    if(timerActive() && !timerDone) timerPauseEl.classList.remove('hidden');
+  } else {
+    syncTimer();
+  }
 });
-// pagehide (verrouillage/bfcache iOS) → figer aussi
-window.addEventListener('pagehide', ()=>{ if(timerActive()) pauseTimer(); });
+// Retour depuis le cache/bfcache (déverrouillage iOS) → resynchroniser
+window.addEventListener('pageshow', syncTimer);
+window.addEventListener('focus', syncTimer);
+
+// ---- Notifications Web (repos terminé même en arrière-plan) ----
+// Sur Android/Chrome la notification s'affiche même appli en arrière-plan.
+// Sur iOS Safari (PWA installée requise + iOS 16.4+) elle peut être RETARDÉE par le
+// système car le JS est gelé en arrière-plan : la notif part au réveil du JS. C'est la
+// meilleure solution web disponible ; le compte reste toujours juste grâce au rattrapage.
+function ensureNotifyPermission(){
+  try{
+    if(!('Notification' in window)) return;
+    if(Notification.permission === 'default'){
+      Notification.requestPermission().catch(()=>{});
+    }
+  }catch(e){}
+}
+function notifyRestDone(){
+  try{
+    if(!('Notification' in window) || Notification.permission !== 'granted') return;
+    // Inutile de notifier si l'écran est déjà sous les yeux de Kevin
+    if(!document.hidden) return;
+    const exo = document.getElementById('timer-exo').textContent || '';
+    new Notification('⏱ Repos terminé — c\'est reparti !', {
+      body: exo ? 'Prochaine série : '+exo : 'Prochaine série 💥',
+      tag: 'kevin-rest-done', renotify: true
+    });
+  }catch(e){}
+}
 
 // ---- Son (Web Audio) ----
 let audioCtx=null;
