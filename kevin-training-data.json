@@ -49,7 +49,8 @@
       "Incohérence de charge départ sur incline dumbbell press (20kg×7 puis 15kg×12)",
       "Variance de reps sur cable tricep extensions (18→11 = momentum probable sur 1er set)",
       "Signal de fatigue sur bench press en dernier set (70kg×7 RIR1)",
-      "Push B: Dips assistance réduite 35→30kg, élévations latérales série 3 stabilisée (8→10)"
+      "Push B: Dips assistance réduite 35→30kg, élévations latérales série 3 stabilisée (8→10)",
+      "Push B 14/08 — RETOUR SALLE D'ORIGINE : matériel différent, charges NON comparables. Élévations latérales progressées à 7,5kg (5→7,5). Assistance dips incohérente (30kg puis 6,8kg = machine/réglage différents). Triceps sur nouvelle poulie 32kg (≠ 45kg autre salle). Reconstruire les références sur ce matériel avant de parler de progression."
     ],
     "PULL": [
       "Lat pulldown: S3 réglé (6→10 reps à 77kg), objectif désormais 4 séries pleines (S4: 8)",
@@ -138,14 +139,15 @@
         {
           "nom": "Dips assistés",
           "type": "compound",
-          "series": 3,
+          "series": 4,
           "reps": "10",
           "repos": "90s",
           "rir": 2,
           "tempo": "2010",
-          "last_performance": { "assistance": [30, 30, 30], "reps": [10, 10, 10] },
-          "objectif_next": "Assistance 25kg si RIR 2 facile",
-          "notes": "Progression de force confirmée (35→30kg)"
+          "last_performance": { "assistance": [30, 6.8, 6.8, 23], "reps": [15, 10, 10, 5], "bonus_set": 4 },
+          "objectif_next": "Fiabiliser le réglage d'assistance sur cette machine (charge non comparable à l'autre salle) — viser 3×10 propres à assistance constante",
+          "notes": "⚠ Salle d'origine — matériel différent des séances précédentes. Assistance non comparable (machine/réglage différents : 30kg puis 6,8kg). S4 = série bonus (23kg×5)",
+          "salle": "origine"
         },
         {
           "nom": "Élévations latérales haltères",
@@ -155,10 +157,11 @@
           "repos": "60s",
           "rir": 2,
           "tempo": "2011",
-          "last_performance": { "poids": [5, 5, 5], "reps": [12, 12, 10] },
-          "objectif_next": "5kg×12-12-12",
-          "notes": "POINT FAIBLE — priorité épaules",
-          "point_faible": true
+          "last_performance": { "poids": [7.5, 7.5, 5], "reps": [14, 7, 10] },
+          "objectif_next": "7,5kg×10-10 sur S1-S2 (a progressé 5→7,5kg), finir 5kg×12",
+          "notes": "POINT FAIBLE — priorité épaules. Progression charge 5→7,5kg. ⚠ Salle d'origine, matériel différent des séances précédentes",
+          "point_faible": true,
+          "salle": "origine"
         },
         {
           "nom": "Extensions triceps poulie haute",
@@ -168,9 +171,10 @@
           "repos": "60s",
           "rir": 2,
           "tempo": "2011",
-          "last_performance": { "poids": [45, 45], "reps": [15, 15] },
-          "objectif_next": "45kg×15-15 (maintenir)",
-          "notes": "Objectif atteint, parfaitement stable"
+          "last_performance": { "poids": [32, 32], "reps": [9, 5] },
+          "objectif_next": "32kg×9-7 (nouvelle poulie — charge non comparable au 45kg, reconstruire la référence)",
+          "notes": "⚠ Salle d'origine, poulie différente (charge non comparable au 45kg de l'autre salle). Chute S2 (9→5) : gérer la fatigue de fin",
+          "salle": "origine"
         }
       ]
     },
@@ -322,12 +326,24 @@
     }
   },
   "derniere_seance": {
-    "type": "PULL_A",
-    "date": "12/08/2026",
+    "type": "PUSH_B",
+    "date": "14/08/2026",
     "exercices_complets": true,
-    "prochaine_seance": "LEGS"
+    "prochaine_seance": "PUSH_A",
+    "salle": "origine",
+    "note": "Retour à la salle d'origine — matériel différent, charges non comparables aux séances précédentes"
   },
   "historique_sessions": [
+    {
+      "date": "14/08/2026",
+      "type": "PUSH_B",
+      "salle": "origine (matériel différent — charges non comparables)",
+      "resultats": {
+        "Dips assistés": "assistance 30kg×15, 6,8kg×10, 6,8kg×10 + bonus 23kg×5 (assistance non comparable, machine différente)",
+        "Élévations latérales": "7,5kg×14, 7,5kg×7, 5kg×10 (progression 5→7,5kg)",
+        "Extensions triceps": "32kg×9, 32kg×5 (nouvelle poulie, charge non comparable au 45kg)"
+      }
+    },
     {
       "date": "12/08/2026",
       "type": "PULL_A",
