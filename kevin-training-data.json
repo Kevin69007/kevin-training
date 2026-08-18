@@ -89,7 +89,8 @@
       "Variance de reps sur cable tricep extensions (18→11 = momentum probable sur 1er set)",
       "Signal de fatigue sur bench press en dernier set (70kg×7 RIR1)",
       "Push B: Dips assistance réduite 35→30kg, élévations latérales série 3 stabilisée (8→10)",
-      "Push B 14/08 — RETOUR SALLE D'ORIGINE : matériel différent, charges NON comparables. Élévations latérales progressées à 7,5kg (5→7,5). Assistance dips incohérente (30kg puis 6,8kg = machine/réglage différents). Triceps sur nouvelle poulie 32kg (≠ 45kg autre salle). Reconstruire les références sur ce matériel avant de parler de progression."
+      "Push B 14/08 — RETOUR SALLE D'ORIGINE : matériel différent, charges NON comparables. Élévations latérales progressées à 7,5kg (5→7,5). Assistance dips incohérente (30kg puis 6,8kg = machine/réglage différents). Triceps sur nouvelle poulie 32kg (≠ 45kg autre salle). Reconstruire les références sur ce matériel avant de parler de progression.",
+      "Push A 18/08 — TOUJOURS SALLE D'ORIGINE (matériel différent, charges non comparables aux 70kg de l'autre salle). Développé couché 60kg = nouvelle baseline, reps qui chutent 8→6 (stabiliser 4 séries pleines avant de charger). Développé incliné 15kg×12-12-12 propre = 🎯 prêt à 17,5kg. Élévations latérales en régression S2-S3 (12→9→7) : faiblesse épaules en fin de séance à surveiller. Cardio 10 min (à logger côté nutrition)."
     ],
     "PULL": [
       "Lat pulldown: S3 réglé (6→10 reps à 77kg), objectif désormais 4 séries pleines (S4: 8)",
@@ -132,8 +133,9 @@
             ],
             "rir_estime": 0
           },
-          "objectif_next": "60kg×8 sur S1, stabiliser S2-4 à 6 reps min",
-          "notes": "Signal de fatigue sur dernier set"
+          "objectif_next": "60kg×8-8-8-8 (structure régulière) puis monter à 65kg",
+          "notes": "⚠ Salle d'origine — nouvelle baseline (barre différente, charges non comparables au 70kg de l'autre salle). Reps qui chutent 8→6 : viser 4 séries pleines avant de charger",
+          "salle": "origine"
         },
         {
           "nom": "Développé incliné haltères",
@@ -156,8 +158,9 @@
             ],
             "rir_estime": 1
           },
-          "objectif_next": "Passer à 17.5kg×10-12 si RIR≤1 sur toutes les séries",
-          "notes": "Incohérence charge départ 20kg→15kg — standardiser"
+          "objectif_next": "17,5kg×10-10-10 (objectif structure régulière atteint 🎯)",
+          "notes": "🎯 OBJECTIF ATTEINT : 15kg×12-12-12 structure régulière. Prêt à monter à 17,5kg. ⚠ Salle d'origine",
+          "salle": "origine"
         },
         {
           "nom": "Dips assistés (prise large)",
@@ -180,8 +183,9 @@
             ],
             "rir_estime": 1
           },
-          "objectif_next": "15kg×10-10-10 (stabiliser série 3)",
-          "notes": "Nouvelle salle — assistance 15kg au lieu de 35kg. Progrès réel. Dernière série à l'échec"
+          "objectif_next": "15kg d'aide×10-10-10 stable (récupérer S3), puis réduire à 12,5kg",
+          "notes": "⚠ Salle d'origine — machine différente, assistance non comparable au 35kg de l'autre salle. S3 en baisse (10→7) : fatigue de fin",
+          "salle": "origine"
         },
         {
           "nom": "Élévations latérales haltères",
@@ -204,9 +208,10 @@
             ],
             "rir_estime": 0
           },
-          "objectif_next": "5kg×12-12-10 minimum (limiter la chute S3)",
-          "notes": "S2 et S3 en baisse marquée — fatigue cumulative en fin de séance. POINT FAIBLE — priorité épaules",
-          "point_faible": true
+          "objectif_next": "5kg×12-12-10 minimum (récupérer S2-S3)",
+          "notes": "POINT FAIBLE — priorité épaules. ⚠ Régression S2 (12→9) et S3 (10→7) vs dernière séance (12-12-10). Fatigue cumulative en fin de séance. Volume 2x/semaine. ⚠ Salle d'origine",
+          "point_faible": true,
+          "salle": "origine"
         },
         {
           "nom": "Extensions triceps poulie haute",
@@ -227,8 +232,9 @@
             ],
             "rir_estime": 1
           },
-          "objectif_next": "23kg×15-15 sur 2 séries",
-          "notes": "Changement de salle = charges différentes (ancien 45kg, nouveau 18/23kg). Séries propres, bon contrôle"
+          "objectif_next": "23kg×15-15 sur les 2 séries",
+          "notes": "⚠ Salle d'origine, nouvelle poulie (charge non comparable au 45kg de l'autre salle). Plus régulier (15-15 vs l'ancien gap 18-11)",
+          "salle": "origine"
         }
       ]
     },
@@ -546,10 +552,23 @@
     "date": "18/08/2026",
     "exercices_complets": true,
     "prochaine_seance": "PULL_A",
-    "salle": "nouvelle",
-    "note": "Nouvelle salle (depuis 14/08). Charges NON comparables avec l'ancienne. Bonne séance globale, faiblesse épaules en fin de séance marquée"
+    "salle": "origine",
+    "note": "Salle d'origine (retour depuis le 14/08) — matériel différent, charges non comparables aux séances de l'autre salle. Nouvelle baseline sur les compounds. Bonne séance globale, faiblesse épaules en fin de séance marquée"
   },
   "historique_sessions": [
+    {
+      "date": "18/08/2026",
+      "type": "PUSH_A",
+      "salle": "origine (matériel différent — charges non comparables)",
+      "resultats": {
+        "Développé couché barre": "60kg×8, 60kg×6, 60kg×6, 60kg×6 (nouvelle baseline salle d'origine)",
+        "Développé incliné haltères": "15kg×12, 15kg×12, 15kg×12 (🎯 objectif atteint)",
+        "Dips assistés (prise large)": "assistance 15kg×10, 15kg×10, 15kg×7 (machine différente, assistance non comparable)",
+        "Élévations latérales": "5kg×12, 5kg×9, 5kg×7 (régression S2-S3)",
+        "Extensions triceps": "18kg×15, 23kg×15 (nouvelle poulie, charge non comparable au 45kg)",
+        "Cardio": "10 min"
+      }
+    },
     {
       "date": "14/08/2026",
       "type": "PUSH_B",
@@ -611,79 +630,6 @@
         "Élévations latérales": "5kg×12, 5kg×12, 5kg×8",
         "Extensions triceps": "45kg×18, 45kg×11"
       }
-    },
-    {
-      "type": "PUSH_A",
-      "date": "18/08/2026",
-      "salle": "nouvelle",
-      "exercices": [
-        {
-          "nom": "Développé couché barre",
-          "poids": [
-            60,
-            60,
-            60,
-            60
-          ],
-          "reps": [
-            8,
-            6,
-            6,
-            6
-          ]
-        },
-        {
-          "nom": "Développé incliné haltères",
-          "poids": [
-            15,
-            15,
-            15
-          ],
-          "reps": [
-            12,
-            12,
-            12
-          ]
-        },
-        {
-          "nom": "Dips assistés (prise large)",
-          "assistance": [
-            15,
-            15,
-            15
-          ],
-          "reps": [
-            10,
-            10,
-            7
-          ]
-        },
-        {
-          "nom": "Élévations latérales haltères",
-          "poids": [
-            5,
-            5,
-            5
-          ],
-          "reps": [
-            12,
-            9,
-            7
-          ]
-        },
-        {
-          "nom": "Extensions triceps poulie haute",
-          "poids": [
-            18,
-            23
-          ],
-          "reps": [
-            15,
-            15
-          ]
-        }
-      ],
-      "note": "Bonne séance. Épaules faiblissent en fin de séance (élévations latérales). Dips en progrès net vs ancienne salle (moins d'assistance). Triceps bien exécutés"
     }
   ]
 }
