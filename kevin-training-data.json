@@ -7,7 +7,11 @@
     "activite": "sédentaire",
     "tdee": 2500,
     "objectif_calories": 2000,
-    "macros": { "proteines": 160, "glucides": 195, "lipides": 65 },
+    "macros": {
+      "proteines": 160,
+      "glucides": 195,
+      "lipides": 65
+    },
     "supplementation": {
       "creatine": "5g/jour — obligatoire",
       "caffeine": "200-400mg pré-training — optionnelle",
@@ -15,7 +19,12 @@
     }
   },
   "programme": {
-    "split": ["PUSH_A", "PULL_A", "LEGS", "PUSH_B"],
+    "split": [
+      "PUSH_A",
+      "PULL_A",
+      "LEGS",
+      "PUSH_B"
+    ],
     "semaine_type": {
       "lundi": "repos",
       "mardi": "PUSH_A",
@@ -33,12 +42,42 @@
     }
   },
   "points_faibles": [
-    { "zone": "Épaules (deltoïde latéral)", "priorite": "haute", "action": "augmenter fréquence/volume élévations latérales (2x/semaine min)", "impact": "V-taper, largeur épaules" },
-    { "zone": "Dos (largeur)", "priorite": "haute", "action": "prioriser tirage vertical prise large, pull-over", "impact": "silhouette en V" },
-    { "zone": "Fessiers", "priorite": "haute", "action": "ajouter hip thrust + volume ciblé fessiers sur séances Legs", "impact": "volume visible habillé" },
-    { "zone": "Bras (biceps/triceps)", "priorite": "moyenne", "action": "gagner en densité, éviter momentum", "impact": "harmonie générale" },
-    { "zone": "Abdominaux/taille", "priorite": "nutrition", "action": "déficit calorique strict — peser fromage/avocat", "impact": "révélation base musculaire" },
-    { "zone": "Jambes (volume)", "priorite": "moyenne", "action": "épaissir quadriceps + fessiers", "impact": "proportion globale" }
+    {
+      "zone": "Épaules (deltoïde latéral)",
+      "priorite": "haute",
+      "action": "augmenter fréquence/volume élévations latérales (2x/semaine min)",
+      "impact": "V-taper, largeur épaules"
+    },
+    {
+      "zone": "Dos (largeur)",
+      "priorite": "haute",
+      "action": "prioriser tirage vertical prise large, pull-over",
+      "impact": "silhouette en V"
+    },
+    {
+      "zone": "Fessiers",
+      "priorite": "haute",
+      "action": "ajouter hip thrust + volume ciblé fessiers sur séances Legs",
+      "impact": "volume visible habillé"
+    },
+    {
+      "zone": "Bras (biceps/triceps)",
+      "priorite": "moyenne",
+      "action": "gagner en densité, éviter momentum",
+      "impact": "harmonie générale"
+    },
+    {
+      "zone": "Abdominaux/taille",
+      "priorite": "nutrition",
+      "action": "déficit calorique strict — peser fromage/avocat",
+      "impact": "révélation base musculaire"
+    },
+    {
+      "zone": "Jambes (volume)",
+      "priorite": "moyenne",
+      "action": "épaissir quadriceps + fessiers",
+      "impact": "proportion globale"
+    }
   ],
   "points_forts": [
     "Jambes bien proportionnées en muscle visible",
@@ -78,8 +117,22 @@
           "repos": "2-3 min",
           "rir": 1,
           "tempo": "3010",
-          "last_performance": { "poids": [60, 70, 70, 70], "reps": [12, 10, 8, 7], "rir_estime": 1 },
-          "objectif_next": "70kg×8-9 sur séries 3-4",
+          "last_performance": {
+            "poids": [
+              60,
+              60,
+              60,
+              60
+            ],
+            "reps": [
+              8,
+              6,
+              6,
+              6
+            ],
+            "rir_estime": 0
+          },
+          "objectif_next": "60kg×8 sur S1, stabiliser S2-4 à 6 reps min",
           "notes": "Signal de fatigue sur dernier set"
         },
         {
@@ -90,8 +143,20 @@
           "repos": "2 min",
           "rir": 1,
           "tempo": "3010",
-          "last_performance": { "poids": [20, 15, 15], "reps": [7, 12, 12] },
-          "objectif_next": "15kg×12-12-12 (structure régulière)",
+          "last_performance": {
+            "poids": [
+              15,
+              15,
+              15
+            ],
+            "reps": [
+              12,
+              12,
+              12
+            ],
+            "rir_estime": 1
+          },
+          "objectif_next": "Passer à 17.5kg×10-12 si RIR≤1 sur toutes les séries",
           "notes": "Incohérence charge départ 20kg→15kg — standardiser"
         },
         {
@@ -102,9 +167,21 @@
           "repos": "90s",
           "rir": 2,
           "tempo": "2010",
-          "last_performance": { "assistance": [35, 35, 35], "reps": [10, 10, 10] },
-          "objectif_next": "Réduire assistance à 30kg si RIR facile",
-          "notes": ""
+          "last_performance": {
+            "assistance": [
+              15,
+              15,
+              15
+            ],
+            "reps": [
+              10,
+              10,
+              7
+            ],
+            "rir_estime": 1
+          },
+          "objectif_next": "15kg×10-10-10 (stabiliser série 3)",
+          "notes": "Nouvelle salle — assistance 15kg au lieu de 35kg. Progrès réel. Dernière série à l'échec"
         },
         {
           "nom": "Élévations latérales haltères",
@@ -114,9 +191,21 @@
           "repos": "60s",
           "rir": 2,
           "tempo": "2011",
-          "last_performance": { "poids": [5, 5, 5], "reps": [12, 12, 10] },
-          "objectif_next": "5kg×12-12-12 (stabiliser série 3)",
-          "notes": "POINT FAIBLE — priorité épaules. Volume 2x/semaine",
+          "last_performance": {
+            "poids": [
+              5,
+              5,
+              5
+            ],
+            "reps": [
+              12,
+              9,
+              7
+            ],
+            "rir_estime": 0
+          },
+          "objectif_next": "5kg×12-12-10 minimum (limiter la chute S3)",
+          "notes": "S2 et S3 en baisse marquée — fatigue cumulative en fin de séance. POINT FAIBLE — priorité épaules",
           "point_faible": true
         },
         {
@@ -127,9 +216,19 @@
           "repos": "60s",
           "rir": 2,
           "tempo": "2011",
-          "last_performance": { "poids": [45, 45], "reps": [18, 11] },
-          "objectif_next": "45kg×15-15 (sans élan, sans gap)",
-          "notes": "Momentum probable sur 1er set — contrôle strict"
+          "last_performance": {
+            "poids": [
+              18,
+              23
+            ],
+            "reps": [
+              15,
+              15
+            ],
+            "rir_estime": 1
+          },
+          "objectif_next": "23kg×15-15 sur 2 séries",
+          "notes": "Changement de salle = charges différentes (ancien 45kg, nouveau 18/23kg). Séries propres, bon contrôle"
         }
       ]
     },
@@ -144,7 +243,21 @@
           "repos": "90s",
           "rir": 2,
           "tempo": "2010",
-          "last_performance": { "assistance": [30, 6.8, 6.8, 23], "reps": [15, 10, 10, 5], "bonus_set": 4 },
+          "last_performance": {
+            "assistance": [
+              30,
+              6.8,
+              6.8,
+              23
+            ],
+            "reps": [
+              15,
+              10,
+              10,
+              5
+            ],
+            "bonus_set": 4
+          },
           "objectif_next": "Fiabiliser le réglage d'assistance sur cette machine (charge non comparable à l'autre salle) — viser 3×10 propres à assistance constante",
           "notes": "⚠ Salle d'origine — matériel différent des séances précédentes. Assistance non comparable (machine/réglage différents : 30kg puis 6,8kg). S4 = série bonus (23kg×5)",
           "salle": "origine"
@@ -157,7 +270,18 @@
           "repos": "60s",
           "rir": 2,
           "tempo": "2011",
-          "last_performance": { "poids": [7.5, 7.5, 5], "reps": [14, 7, 10] },
+          "last_performance": {
+            "poids": [
+              7.5,
+              7.5,
+              5
+            ],
+            "reps": [
+              14,
+              7,
+              10
+            ]
+          },
           "objectif_next": "7,5kg×10-10 sur S1-S2 (a progressé 5→7,5kg), finir 5kg×12",
           "notes": "POINT FAIBLE — priorité épaules. Progression charge 5→7,5kg. ⚠ Salle d'origine, matériel différent des séances précédentes",
           "point_faible": true,
@@ -171,7 +295,16 @@
           "repos": "60s",
           "rir": 2,
           "tempo": "2011",
-          "last_performance": { "poids": [32, 32], "reps": [9, 5] },
+          "last_performance": {
+            "poids": [
+              32,
+              32
+            ],
+            "reps": [
+              9,
+              5
+            ]
+          },
           "objectif_next": "32kg×9-7 (nouvelle poulie — charge non comparable au 45kg, reconstruire la référence)",
           "notes": "⚠ Salle d'origine, poulie différente (charge non comparable au 45kg de l'autre salle). Chute S2 (9→5) : gérer la fatigue de fin",
           "salle": "origine"
@@ -189,7 +322,20 @@
           "repos": "2 min",
           "rir": 1,
           "tempo": "2011",
-          "last_performance": { "poids": [77, 77, 77, 77], "reps": [10, 10, 10, 7] },
+          "last_performance": {
+            "poids": [
+              77,
+              77,
+              77,
+              77
+            ],
+            "reps": [
+              10,
+              10,
+              10,
+              7
+            ]
+          },
           "objectif_next": "77kg×10-10-10-8 (S4: 8 reps)",
           "notes": "POINT FAIBLE — largeur dos. Prise large. Gros progrès S3 (6→10)",
           "point_faible": true
@@ -202,7 +348,23 @@
           "repos": "2 min",
           "rir": 1,
           "tempo": "2010",
-          "last_performance": { "poids": [40, 40, 40], "reps": [12, 12, 9], "trajectoire": ["nombril", "nombril", "mixte"] },
+          "last_performance": {
+            "poids": [
+              40,
+              40,
+              40
+            ],
+            "reps": [
+              12,
+              12,
+              9
+            ],
+            "trajectoire": [
+              "nombril",
+              "nombril",
+              "mixte"
+            ]
+          },
           "objectif_next": "40kg×12-12-10 (progression S3 vers 10)",
           "notes": "Trajectoire inconsistante — standardiser vers nombril"
         },
@@ -214,7 +376,18 @@
           "repos": "90s",
           "rir": 2,
           "tempo": "2011",
-          "last_performance": { "poids": [45, 45, 45], "reps": [10, 9, 8] },
+          "last_performance": {
+            "poids": [
+              45,
+              45,
+              45
+            ],
+            "reps": [
+              10,
+              9,
+              8
+            ]
+          },
           "objectif_next": "45kg×10-9-8 (stabiliser avant de progresser)",
           "notes": "Baisse générale vs dernière (12-10-8) — stabiliser à 45kg"
         },
@@ -226,7 +399,18 @@
           "repos": "60s",
           "rir": 1,
           "tempo": "2011",
-          "last_performance": { "poids": [28, 28, 28], "reps": [9, 8, 5] },
+          "last_performance": {
+            "poids": [
+              28,
+              28,
+              28
+            ],
+            "reps": [
+              9,
+              8,
+              5
+            ]
+          },
           "objectif_next": "28kg×9-8-8 (récupérer S3)",
           "notes": "POINT FAIBLE — densité bras. S3 en chute (8→5) : fatigue ou technique",
           "point_faible": true
@@ -239,7 +423,9 @@
           "repos": "60s",
           "rir": 2,
           "tempo": "2011",
-          "last_performance": { "details": "15kg×4, 10kg×7, 10kg×6 (dropset)" },
+          "last_performance": {
+            "details": "15kg×4, 10kg×7, 10kg×6 (dropset)"
+          },
           "objectif_next": "15kg×5-5-5 sans dropset (S1 raté : 4 au lieu de 5)",
           "notes": "Dropset pollue les données — utiliser poids stable",
           "point_faible": true
@@ -257,7 +443,9 @@
           "repos": "2-3 min",
           "rir": 1,
           "tempo": "3010",
-          "last_performance": { "note": "Session calibration technique — charges légères" },
+          "last_performance": {
+            "note": "Session calibration technique — charges légères"
+          },
           "objectif_next": "Stabiliser technique avant progression charge",
           "notes": "Première session trackée — apprentissage technique (profondeur, alignement genoux, colonne neutre). Pieds légèrement avancés devant l'axe, dos neutre"
         },
@@ -269,7 +457,9 @@
           "repos": "90-120s",
           "rir": 2,
           "tempo": "2011",
-          "last_performance": { "note": "En cours — pas encore finalisé" },
+          "last_performance": {
+            "note": "En cours — pas encore finalisé"
+          },
           "objectif_next": "Finaliser et logger la session",
           "notes": "Pieds centrés largeur épaules, jamais de verrouillage genoux"
         },
@@ -281,7 +471,9 @@
           "repos": "2 min",
           "rir": 1,
           "tempo": "3010",
-          "last_performance": { "note": "Pas encore de données" },
+          "last_performance": {
+            "note": "Pas encore de données"
+          },
           "objectif_next": "Première session — calibration",
           "notes": "Genoux quasi fixes, barre collée aux jambes, dos jamais arrondi"
         },
@@ -293,7 +485,18 @@
           "repos": "60-90s",
           "rir": 2,
           "tempo": "2011",
-          "last_performance": { "poids": [55, 55, 55], "reps": [8, 7, 6] },
+          "last_performance": {
+            "poids": [
+              55,
+              55,
+              55
+            ],
+            "reps": [
+              8,
+              7,
+              6
+            ]
+          },
           "objectif_next": "55kg×10-8-8 (progression reps)",
           "notes": "Bassin plaqué contre le coussin. 1s contraction en haut"
         },
@@ -305,7 +508,18 @@
           "repos": "60s",
           "rir": 2,
           "tempo": "contrôlé",
-          "last_performance": { "poids": [80, 100, 100], "reps": [13, 10, 10] },
+          "last_performance": {
+            "poids": [
+              80,
+              100,
+              100
+            ],
+            "reps": [
+              13,
+              10,
+              10
+            ]
+          },
           "objectif_next": "100kg×12-12 (progression reps)",
           "notes": "Pas de blocage brutal en extension totale. Ordre non standard (passé en premier)"
         },
@@ -317,7 +531,9 @@
           "repos": "90s",
           "rir": 2,
           "tempo": "2011",
-          "last_performance": { "note": "Nouvel exercice — ajouté pour point faible fessiers" },
+          "last_performance": {
+            "note": "Nouvel exercice — ajouté pour point faible fessiers"
+          },
           "objectif_next": "Première session — calibration",
           "notes": "POINT FAIBLE — fessiers. Ajouté suite analyse physique",
           "point_faible": true
@@ -326,12 +542,12 @@
     }
   },
   "derniere_seance": {
-    "type": "PUSH_B",
-    "date": "14/08/2026",
+    "type": "PUSH_A",
+    "date": "18/08/2026",
     "exercices_complets": true,
-    "prochaine_seance": "PUSH_A",
-    "salle": "origine",
-    "note": "Retour à la salle d'origine — matériel différent, charges non comparables aux séances précédentes"
+    "prochaine_seance": "PULL_A",
+    "salle": "nouvelle",
+    "note": "Nouvelle salle (depuis 14/08). Charges NON comparables avec l'ancienne. Bonne séance globale, faiblesse épaules en fin de séance marquée"
   },
   "historique_sessions": [
     {
@@ -395,6 +611,79 @@
         "Élévations latérales": "5kg×12, 5kg×12, 5kg×8",
         "Extensions triceps": "45kg×18, 45kg×11"
       }
+    },
+    {
+      "type": "PUSH_A",
+      "date": "18/08/2026",
+      "salle": "nouvelle",
+      "exercices": [
+        {
+          "nom": "Développé couché barre",
+          "poids": [
+            60,
+            60,
+            60,
+            60
+          ],
+          "reps": [
+            8,
+            6,
+            6,
+            6
+          ]
+        },
+        {
+          "nom": "Développé incliné haltères",
+          "poids": [
+            15,
+            15,
+            15
+          ],
+          "reps": [
+            12,
+            12,
+            12
+          ]
+        },
+        {
+          "nom": "Dips assistés (prise large)",
+          "assistance": [
+            15,
+            15,
+            15
+          ],
+          "reps": [
+            10,
+            10,
+            7
+          ]
+        },
+        {
+          "nom": "Élévations latérales haltères",
+          "poids": [
+            5,
+            5,
+            5
+          ],
+          "reps": [
+            12,
+            9,
+            7
+          ]
+        },
+        {
+          "nom": "Extensions triceps poulie haute",
+          "poids": [
+            18,
+            23
+          ],
+          "reps": [
+            15,
+            15
+          ]
+        }
+      ],
+      "note": "Bonne séance. Épaules faiblissent en fin de séance (élévations latérales). Dips en progrès net vs ancienne salle (moins d'assistance). Triceps bien exécutés"
     }
   ]
 }
