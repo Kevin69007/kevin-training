@@ -262,7 +262,8 @@
               10,
               10,
               8
-            ]
+            ],
+            "bonus_set": false
           },
           "objectif_next": "6,8kg d'aide×10-10-10-10 sur les 4 séries (récupérer S4 8→10), puis réduire l'aide à 5kg — salle d'origine, charge non comparable à l'autre salle",
           "notes": "⚠ Salle d'origine — matériel différent (charges non comparables à l'autre salle). Assistance désormais stabilisée à 6,8kg constant sur les 4 séries (réglage fiabilisé). S4 en légère baisse (10→8) : fatigue de fin",
@@ -286,9 +287,10 @@
               10,
               9,
               8
-            ]
+            ],
+            "rir_estime": 1
           },
-          "objectif_next": "7,5kg×10-10-9 (récupérer S2 vers 10, puis tenir 7,5kg sur S3) — salle d'origine, charge non comparable à l'autre salle",
+          "objectif_next": "7,5kg×10-10 sur S1-S2 (maintenir), finir S3 à 5kg×10 — salle d'origine, charge non comparable à l'autre salle",
           "notes": "POINT FAIBLE — priorité épaules. ⚠ Salle d'origine, matériel différent (charges non comparables à l'autre salle). S1-S2 propres à 7,5kg, S3 redescendue à 5kg (fatigue de fin). Volume 2x/semaine",
           "point_faible": true,
           "salle": "origine"
@@ -309,9 +311,10 @@
             "reps": [
               15,
               10
-            ]
+            ],
+            "rir_estime": 2
           },
-          "objectif_next": "18kg×15-15 (récupérer S2 10→15) — poulie salle d'origine, charge non comparable au 45kg de l'autre salle",
+          "objectif_next": "18kg×15-12 (récupérer S2 10→12) — poulie salle d'origine, charge non comparable au 45kg de l'autre salle",
           "notes": "⚠ Salle d'origine, poulie différente (charge non comparable au 45kg de l'autre salle). Charge constante 18kg sur les 2 séries. Chute S2 (15→10) : gérer la fatigue de fin",
           "salle": "origine"
         }
