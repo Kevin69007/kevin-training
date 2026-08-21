@@ -90,7 +90,8 @@
       "Signal de fatigue sur bench press en dernier set (70kg×7 RIR1)",
       "Push B: Dips assistance réduite 35→30kg, élévations latérales série 3 stabilisée (8→10)",
       "Push B 14/08 — RETOUR SALLE D'ORIGINE : matériel différent, charges NON comparables. Élévations latérales progressées à 7,5kg (5→7,5). Assistance dips incohérente (30kg puis 6,8kg = machine/réglage différents). Triceps sur nouvelle poulie 32kg (≠ 45kg autre salle). Reconstruire les références sur ce matériel avant de parler de progression.",
-      "Push A 18/08 — TOUJOURS SALLE D'ORIGINE (matériel différent, charges non comparables aux 70kg de l'autre salle). Développé couché 60kg = nouvelle baseline, reps qui chutent 8→6 (stabiliser 4 séries pleines avant de charger). Développé incliné 15kg×12-12-12 propre = 🎯 prêt à 17,5kg. Élévations latérales en régression S2-S3 (12→9→7) : faiblesse épaules en fin de séance à surveiller. Cardio 10 min (à logger côté nutrition)."
+      "Push A 18/08 — TOUJOURS SALLE D'ORIGINE (matériel différent, charges non comparables aux 70kg de l'autre salle). Développé couché 60kg = nouvelle baseline, reps qui chutent 8→6 (stabiliser 4 séries pleines avant de charger). Développé incliné 15kg×12-12-12 propre = 🎯 prêt à 17,5kg. Élévations latérales en régression S2-S3 (12→9→7) : faiblesse épaules en fin de séance à surveiller. Cardio 10 min (à logger côté nutrition).",
+      "Push B 21/08 — SALLE D'ORIGINE (matériel différent, charges non comparables à l'autre salle — valeurs traitées comme nouveau référentiel de cette salle, sans comparaison de progression). Réglages enfin fiabilisés : assistance dips CONSTANTE à 6,8kg sur 4 séries (10-10-10-8) et triceps CONSTANT à 18kg — fini l'incohérence de réglage des séances précédentes, on a désormais une vraie base de progression. Objectifs salle d'origine : dips 4×10 pleines puis réduire l'aide ; élévations latérales tenir 7,5kg jusqu'à S3 (S3 encore à 5kg) ; triceps récupérer S2 (18kg×15-15). Fatigue de fin marquée sur S2 triceps (15→10). Cardio tapis pente 12% à 3 km/h, 25 min (à logger côté nutrition)."
     ],
     "PULL": [
       "Lat pulldown: S3 réglé (6→10 reps à 77kg), objectif désormais 4 séries pleines (S4: 8)",
@@ -251,21 +252,20 @@
           "tempo": "2010",
           "last_performance": {
             "assistance": [
-              30,
               6.8,
               6.8,
-              23
+              6.8,
+              6.8
             ],
             "reps": [
-              15,
               10,
               10,
-              5
-            ],
-            "bonus_set": 4
+              10,
+              8
+            ]
           },
-          "objectif_next": "Fiabiliser le réglage d'assistance sur cette machine (charge non comparable à l'autre salle) — viser 3×10 propres à assistance constante",
-          "notes": "⚠ Salle d'origine — matériel différent des séances précédentes. Assistance non comparable (machine/réglage différents : 30kg puis 6,8kg). S4 = série bonus (23kg×5)",
+          "objectif_next": "6,8kg d'aide×10-10-10-10 sur les 4 séries (récupérer S4 8→10), puis réduire l'aide à 5kg — salle d'origine, charge non comparable à l'autre salle",
+          "notes": "⚠ Salle d'origine — matériel différent (charges non comparables à l'autre salle). Assistance désormais stabilisée à 6,8kg constant sur les 4 séries (réglage fiabilisé). S4 en légère baisse (10→8) : fatigue de fin",
           "salle": "origine"
         },
         {
@@ -283,13 +283,13 @@
               5
             ],
             "reps": [
-              14,
-              7,
-              10
+              10,
+              9,
+              8
             ]
           },
-          "objectif_next": "7,5kg×10-10 sur S1-S2 (a progressé 5→7,5kg), finir 5kg×12",
-          "notes": "POINT FAIBLE — priorité épaules. Progression charge 5→7,5kg. ⚠ Salle d'origine, matériel différent des séances précédentes",
+          "objectif_next": "7,5kg×10-10-9 (récupérer S2 vers 10, puis tenir 7,5kg sur S3) — salle d'origine, charge non comparable à l'autre salle",
+          "notes": "POINT FAIBLE — priorité épaules. ⚠ Salle d'origine, matériel différent (charges non comparables à l'autre salle). S1-S2 propres à 7,5kg, S3 redescendue à 5kg (fatigue de fin). Volume 2x/semaine",
           "point_faible": true,
           "salle": "origine"
         },
@@ -303,16 +303,16 @@
           "tempo": "2011",
           "last_performance": {
             "poids": [
-              32,
-              32
+              18,
+              18
             ],
             "reps": [
-              9,
-              5
+              15,
+              10
             ]
           },
-          "objectif_next": "32kg×9-7 (nouvelle poulie — charge non comparable au 45kg, reconstruire la référence)",
-          "notes": "⚠ Salle d'origine, poulie différente (charge non comparable au 45kg de l'autre salle). Chute S2 (9→5) : gérer la fatigue de fin",
+          "objectif_next": "18kg×15-15 (récupérer S2 10→15) — poulie salle d'origine, charge non comparable au 45kg de l'autre salle",
+          "notes": "⚠ Salle d'origine, poulie différente (charge non comparable au 45kg de l'autre salle). Charge constante 18kg sur les 2 séries. Chute S2 (15→10) : gérer la fatigue de fin",
           "salle": "origine"
         }
       ]
@@ -548,14 +548,25 @@
     }
   },
   "derniere_seance": {
-    "type": "PUSH_A",
-    "date": "18/08/2026",
+    "type": "PUSH_B",
+    "date": "21/08/2026",
     "exercices_complets": true,
     "prochaine_seance": "PULL_A",
     "salle": "origine",
-    "note": "Salle d'origine (retour depuis le 14/08) — matériel différent, charges non comparables aux séances de l'autre salle. Nouvelle baseline sur les compounds. Bonne séance globale, faiblesse épaules en fin de séance marquée"
+    "note": "Salle d'origine — matériel différent, charges non comparables aux séances de l'autre salle. Réglages désormais fiabilisés sur ce matériel : assistance dips constante à 6,8kg, triceps à 18kg constant. Séance complète, fatigue de fin sur S2 triceps et S3 élévations. + Cardio tapis pente 12% à 3 km/h, 25 min"
   },
   "historique_sessions": [
+    {
+      "date": "21/08/2026",
+      "type": "PUSH_B",
+      "salle": "origine (matériel différent — charges non comparables)",
+      "resultats": {
+        "Dips assistés": "aide 6,8kg×10, 6,8kg×10, 6,8kg×10, 6,8kg×8 (assistance constante — réglage fiabilisé sur cette machine)",
+        "Élévations latérales": "7,5kg×10, 7,5kg×9, 5kg×8 (S1-S2 propres à 7,5kg, S3 redescendue à 5kg)",
+        "Extensions triceps": "18kg×15, 18kg×10 (charge constante — poulie salle d'origine, non comparable au 45kg)",
+        "Cardio": "tapis, pente 12% à 3 km/h, 25 min"
+      }
+    },
     {
       "date": "18/08/2026",
       "type": "PUSH_A",
