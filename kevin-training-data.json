@@ -572,7 +572,7 @@
     "exercices_complets": true,
     "prochaine_seance": "PUSH_A",
     "salle": "origine",
-    "note": "Salle d'origine — matériel différent, charges non comparables aux séances de l'autre salle (ni au 30kg/45kg). 🎯 Dips : objectif 4×10 à 6,8kg d'aide ATTEINT (réglage fiabilisé) → passer à 5kg d'aide. 📈 Extensions triceps : nouveau référentiel poulie d'origine, 18kg → 23kg (15-11). ⚠ Élévations latérales (point faible épaules) : S2 en chute à 7 reps, tenir S1-S2 à 7,5kg. (Rotation : LEGS sauté entre le PULL_A du 24/08 et ce PUSH_B — prochaine séance PUSH_A selon le split, ou rattraper LEGS.)"
+    "note": "Salle d'origine — matériel différent, charges non comparables aux séances de l'autre salle (ni au 30kg/45kg). 🎯 Dips : objectif 4×10 à 6,8kg d'aide ATTEINT (réglage fiabilisé) → passer à 5kg d'aide. 📈 Extensions triceps : nouveau référentiel poulie d'origine, 18kg → 23kg (15-11). ⚠ Élévations latérales (point faible épaules) : S2 en chute à 7 reps, tenir S1-S2 à 7,5kg. (Rotation : la séance LEGS A BIEN ÉTÉ FAITE entre le PULL_A du 24/08 et ce PUSH_B, mais non loggée — le programme LEGS contient des exercices à la barre que Kevin ne fait pas (machines uniquement). À corriger avant le prochain LEGS. Prochaine séance : PUSH_A.)"
   },
   "historique_sessions": [
     {
@@ -684,5 +684,18 @@
         "Extensions triceps": "45kg×18, 45kg×11"
       }
     }
-  ]
+  ],
+  "contraintes_materiel": {
+    "regle": "MACHINES UNIQUEMENT — aucun exercice à la barre (barbell / barre EZ / barre droite).",
+    "detail": "Tout exercice à la barre doit être remplacé par son équivalent machine ou poulie. Les haltères restent OK (élévations latérales, curl marteau, développé incliné). Le Smith Machine est considéré comme une machine.",
+    "consequence": "Les séances comportant encore des exercices à la barre ne sont pas loggées par Kevin (cas du LEGS d'août 2026).",
+    "a_corriger": [
+      "PUSH_A / Développé couché barre",
+      "PULL_A / Rowing barre droite",
+      "PULL_A / Curl barre EZ (pupitre isolé)",
+      "LEGS / Romanian Deadlift barre",
+      "LEGS / Hip Thrust (barre)"
+    ],
+    "date_regle": "27/08/2026"
+  }
 }
