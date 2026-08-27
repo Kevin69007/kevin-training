@@ -263,12 +263,12 @@
               10,
               10,
               10,
-              8
+              10
             ],
             "bonus_set": false
           },
-          "objectif_next": "6,8kg d'aide×10-10-10-10 sur les 4 séries (récupérer S4 8→10), puis réduire l'aide à 5kg — salle d'origine, charge non comparable à l'autre salle",
-          "notes": "⚠ Salle d'origine — matériel différent (charges non comparables à l'autre salle). Assistance désormais stabilisée à 6,8kg constant sur les 4 séries (réglage fiabilisé). S4 en légère baisse (10→8) : fatigue de fin",
+          "objectif_next": "🎯 ATTEINT : 6,8kg d'aide×10-10-10-10 sur les 4 séries. Prochaine étape : réduire l'aide à 5kg×10-10-10-10, cap final = dips 4×10 PLEINES (sans assistance) — salle d'origine, charge non comparable à l'autre salle",
+          "notes": "🎯 OBJECTIF ATTEINT (27/08) : S4 récupérée 8→10, 4×10 pleines à assistance constante 6,8kg. Réglage machine fiabilisé et reproductible. ⚠ Salle d'origine — matériel différent (charges non comparables à l'autre salle). Prochain palier : descendre l'aide à 5kg",
           "salle": "origine"
         },
         {
@@ -287,13 +287,13 @@
             ],
             "reps": [
               10,
-              9,
-              8
+              7,
+              10
             ],
             "rir_estime": 1
           },
-          "objectif_next": "7,5kg×10-10 sur S1-S2 (maintenir), finir S3 à 5kg×10 — salle d'origine, charge non comparable à l'autre salle",
-          "notes": "POINT FAIBLE — priorité épaules. ⚠ Salle d'origine, matériel différent (charges non comparables à l'autre salle). S1-S2 propres à 7,5kg, S3 redescendue à 5kg (fatigue de fin). Volume 2x/semaine",
+          "objectif_next": "7,5kg×10-10 sur S1-S2 (tenir les DEUX séries à 7,5kg — S2 est le verrou), finir S3 à 5kg×10 — salle d'origine, charge non comparable à l'autre salle",
+          "notes": "POINT FAIBLE — priorité épaules. S1 7,5kg×10 propre. ⚠ S2 en chute 9→7 (fatigue de fin de séance) = le point à corriger. 🎯 S3 récupérée 8→10 à 5kg. ⚠ Salle d'origine — matériel différent (charges non comparables à l'autre salle). Volume 2x/semaine",
           "point_faible": true,
           "salle": "origine"
         },
@@ -307,17 +307,17 @@
           "tempo": "2011",
           "last_performance": {
             "poids": [
-              18,
-              18
+              23,
+              23
             ],
             "reps": [
               15,
-              10
+              11
             ],
             "rir_estime": 2
           },
-          "objectif_next": "18kg×15-12 (récupérer S2 10→12) — poulie salle d'origine, charge non comparable au 45kg de l'autre salle",
-          "notes": "⚠ Salle d'origine, poulie différente (charge non comparable au 45kg de l'autre salle). Charge constante 18kg sur les 2 séries. Chute S2 (15→10) : gérer la fatigue de fin",
+          "objectif_next": "23kg×15-13 (récupérer S2 11→13) puis 15-15 pour s'aligner sur PUSH_A — poulie salle d'origine, charge non comparable au 45kg de l'autre salle",
+          "notes": "NOUVEAU RÉFÉRENTIEL poulie salle d'origine. 📈 Charge montée 18kg → 23kg (+5kg) sur les 2 séries. Chute S2 15→11 : fatigue de fin, normale après la montée de charge. ⚠ Charge non comparable au 45kg de l'autre salle",
           "salle": "origine"
         }
       ]
@@ -567,14 +567,24 @@
     }
   },
   "derniere_seance": {
-    "type": "PULL_A",
-    "date": "24/08/2026",
+    "type": "PUSH_B",
+    "date": "27/08/2026",
     "exercices_complets": true,
-    "prochaine_seance": "LEGS",
+    "prochaine_seance": "PUSH_A",
     "salle": "origine",
-    "note": "Salle d'origine — matériel différent, charges non comparables aux séances de l'autre salle. Séance de RECALIBRATION : nouvelles baselines PULL_A (lat pulldown 52kg, rowing 30kg, poulie basse 32kg, curl EZ 27kg, marteau 12,5kg). Rowing 12-12-12 trajectoire propre = point fort. Curl marteau sans dropset. + Cardio tapis pente 15% à 3 km/h, 25 min."
+    "note": "Salle d'origine — matériel différent, charges non comparables aux séances de l'autre salle (ni au 30kg/45kg). 🎯 Dips : objectif 4×10 à 6,8kg d'aide ATTEINT (réglage fiabilisé) → passer à 5kg d'aide. 📈 Extensions triceps : nouveau référentiel poulie d'origine, 18kg → 23kg (15-11). ⚠ Élévations latérales (point faible épaules) : S2 en chute à 7 reps, tenir S1-S2 à 7,5kg. (Rotation : LEGS sauté entre le PULL_A du 24/08 et ce PUSH_B — prochaine séance PUSH_A selon le split, ou rattraper LEGS.)"
   },
   "historique_sessions": [
+    {
+      "date": "27/08/2026",
+      "type": "PUSH_B",
+      "salle": "origine (matériel différent — charges non comparables, ni au 30kg/45kg de l'autre salle)",
+      "resultats": {
+        "Dips assistés": "aide 6,8kg×10, 6,8kg×10, 6,8kg×10, 6,8kg×10 (assistance constante — réglage fiabilisé, objectif 4×10 ATTEINT)",
+        "Élévations latérales": "7,5kg×10 propre, 7,5kg×7 (chute — fatigue de fin), 5kg×10",
+        "Extensions triceps": "23kg×15, 23kg×11 (nouveau référentiel poulie d'origine, charge montée de 18kg à 23kg — non comparable au 45kg)"
+      }
+    },
     {
       "date": "24/08/2026",
       "type": "PULL_A",
