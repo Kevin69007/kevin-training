@@ -25,21 +25,13 @@
       "LEGS",
       "PUSH_B"
     ],
-    "semaine_type": {
-      "lundi": "repos",
-      "mardi": "PUSH_A",
-      "mercredi": "PULL_A",
-      "jeudi": "LEGS",
-      "vendredi": "PUSH_B",
-      "samedi": "marche ou repos",
-      "dimanche": "repos"
-    },
     "systeme_rir": {
       "RIR_0": "échec total",
       "RIR_1": "1 rep de plus possible max",
       "RIR_2": "2 reps de plus possible max",
       "obligation": "RIR 0-2 sur tous les exercices pour préserver la masse musculaire en déficit calorique"
-    }
+    },
+    "rotation": "PUSH_A > PULL_A > LEGS > PUSH_B (selon la dernière séance faite, jamais selon le jour)"
   },
   "points_faibles": [
     {
@@ -115,16 +107,18 @@
       "exercices": [
         {
           "nom": "Développé couché machine (chest press)",
+          "emoji": "🏋️",
           "type": "compound",
           "series": 4,
           "reps": "8-12",
           "repos": "2-3 min",
+          "repos_s": 150,
           "rir": 1,
           "tempo": "3010",
           "last_performance": {
             "note": "Nouvelle machine — calibration à faire (1re séance : chercher la charge qui donne 8-12 reps à RIR 1)"
           },
-          "objectif_next": "Calibration : trouver la charge pour 4×8-12 à RIR 1, puis viser 4 séries pleines avant de charger",
+          "objectif_next": "Séance de recalibrage : trouve la charge à RIR 2 (pas de référence connue)",
           "notes": "🔁 Remplace le développé couché À LA BARRE (règle : machines uniquement, 27/08/2026). Nouveau référentiel machine — charge non comparable au 60kg barre ni à l'autre salle. ⚠ Salle d'origine",
           "salle": "origine",
           "ancienne_reference_barre": "Développé couché barre 60kg×8-6-6-6 (salle d'origine) — NON transposable, la machine a son propre référentiel",
@@ -133,10 +127,12 @@
         },
         {
           "nom": "Développé incliné haltères",
+          "emoji": "💪",
           "type": "compound",
           "series": 3,
           "reps": "8-12",
           "repos": "2 min",
+          "repos_s": 120,
           "rir": 1,
           "tempo": "3010",
           "last_performance": {
@@ -152,16 +148,19 @@
             ],
             "rir_estime": 1
           },
-          "objectif_next": "17,5kg×10-10-10 (objectif structure régulière atteint 🎯)",
+          "objectif_next": "Séance de recalibrage : trouve la charge à RIR 2 (dernière connue en août : 15×12 · 15×12 · 15×12)",
           "notes": "🎯 OBJECTIF ATTEINT : 15kg×12-12-12 structure régulière. Prêt à monter à 17,5kg. ⚠ Salle d'origine",
-          "salle": "origine"
+          "salle": "origine",
+          "a_calibrer": true
         },
         {
           "nom": "Dips assistés (prise large)",
+          "emoji": "🤸",
           "type": "compound",
           "series": 3,
           "reps": "10",
           "repos": "90s",
+          "repos_s": 90,
           "rir": 2,
           "tempo": "2010",
           "last_performance": {
@@ -177,16 +176,19 @@
             ],
             "rir_estime": 1
           },
-          "objectif_next": "15kg d'aide×10-10-10 stable (récupérer S3), puis réduire à 12,5kg",
+          "objectif_next": "Séance de recalibrage : trouve la charge à RIR 2 (dernière connue en août : aide 15kg×10 · aide 15kg×10 · aide 15kg×7)",
           "notes": "⚠ Salle d'origine — machine différente, assistance non comparable au 35kg de l'autre salle. S3 en baisse (10→7) : fatigue de fin",
-          "salle": "origine"
+          "salle": "origine",
+          "a_calibrer": true
         },
         {
           "nom": "Élévations latérales haltères",
+          "emoji": "🛩️",
           "type": "isolation",
           "series": 3,
           "reps": "10-12",
           "repos": "60s",
+          "repos_s": 60,
           "rir": 2,
           "tempo": "2011",
           "last_performance": {
@@ -202,17 +204,20 @@
             ],
             "rir_estime": 0
           },
-          "objectif_next": "5kg×12-12-10 minimum (récupérer S2-S3)",
+          "objectif_next": "Séance de recalibrage : trouve la charge à RIR 2 (dernière connue en août : 5×12 · 5×9 · 5×7)",
           "notes": "POINT FAIBLE — priorité épaules. ⚠ Régression S2 (12→9) et S3 (10→7) vs dernière séance (12-12-10). Fatigue cumulative en fin de séance. Volume 2x/semaine. ⚠ Salle d'origine",
           "point_faible": true,
-          "salle": "origine"
+          "salle": "origine",
+          "a_calibrer": true
         },
         {
           "nom": "Extensions triceps poulie haute",
+          "emoji": "🔻",
           "type": "isolation",
           "series": 2,
           "reps": "15",
           "repos": "60s",
+          "repos_s": 60,
           "rir": 2,
           "tempo": "2011",
           "last_performance": {
@@ -226,9 +231,10 @@
             ],
             "rir_estime": 1
           },
-          "objectif_next": "23kg×15-15 sur les 2 séries",
+          "objectif_next": "Séance de recalibrage : trouve la charge à RIR 2 (dernière connue en août : 18×15 · 23×15)",
           "notes": "⚠ Salle d'origine, nouvelle poulie (charge non comparable au 45kg de l'autre salle). Plus régulier (15-15 vs l'ancien gap 18-11)",
-          "salle": "origine"
+          "salle": "origine",
+          "a_calibrer": true
         }
       ]
     },
@@ -237,10 +243,12 @@
       "exercices": [
         {
           "nom": "Dips assistés",
+          "emoji": "🤸",
           "type": "compound",
           "series": 4,
           "reps": "10",
           "repos": "90s",
+          "repos_s": 90,
           "rir": 2,
           "tempo": "2010",
           "last_performance": {
@@ -258,16 +266,19 @@
             ],
             "bonus_set": false
           },
-          "objectif_next": "🎯 ATTEINT : 6,8kg d'aide×10-10-10-10 sur les 4 séries. Prochaine étape : réduire l'aide à 5kg×10-10-10-10, cap final = dips 4×10 PLEINES (sans assistance) — salle d'origine, charge non comparable à l'autre salle",
+          "objectif_next": "Séance de recalibrage : trouve la charge à RIR 2 (dernière connue en août : aide 6,8kg×10 · aide 6,8kg×10 · aide 6,8kg×10 · aide 6,8kg×10)",
           "notes": "🎯 OBJECTIF ATTEINT (27/08) : S4 récupérée 8→10, 4×10 pleines à assistance constante 6,8kg. Réglage machine fiabilisé et reproductible. ⚠ Salle d'origine — matériel différent (charges non comparables à l'autre salle). Prochain palier : descendre l'aide à 5kg",
-          "salle": "origine"
+          "salle": "origine",
+          "a_calibrer": true
         },
         {
           "nom": "Élévations latérales haltères",
+          "emoji": "🛩️",
           "type": "isolation",
           "series": 3,
           "reps": "10-12",
           "repos": "60s",
+          "repos_s": 60,
           "rir": 2,
           "tempo": "2011",
           "last_performance": {
@@ -283,17 +294,20 @@
             ],
             "rir_estime": 1
           },
-          "objectif_next": "7,5kg×10-10 sur S1-S2 (tenir les DEUX séries à 7,5kg — S2 est le verrou), finir S3 à 5kg×10 — salle d'origine, charge non comparable à l'autre salle",
+          "objectif_next": "Séance de recalibrage : trouve la charge à RIR 2 (dernière connue en août : 7,5×10 · 7,5×7 · 5×10)",
           "notes": "POINT FAIBLE — priorité épaules. S1 7,5kg×10 propre. ⚠ S2 en chute 9→7 (fatigue de fin de séance) = le point à corriger. 🎯 S3 récupérée 8→10 à 5kg. ⚠ Salle d'origine — matériel différent (charges non comparables à l'autre salle). Volume 2x/semaine",
           "point_faible": true,
-          "salle": "origine"
+          "salle": "origine",
+          "a_calibrer": true
         },
         {
           "nom": "Extensions triceps poulie haute",
+          "emoji": "🔻",
           "type": "isolation",
           "series": 2,
           "reps": "15",
           "repos": "60s",
+          "repos_s": 60,
           "rir": 2,
           "tempo": "2011",
           "last_performance": {
@@ -307,9 +321,10 @@
             ],
             "rir_estime": 2
           },
-          "objectif_next": "23kg×15-13 (récupérer S2 11→13) puis 15-15 pour s'aligner sur PUSH_A — poulie salle d'origine, charge non comparable au 45kg de l'autre salle",
+          "objectif_next": "Séance de recalibrage : trouve la charge à RIR 2 (dernière connue en août : 23×15 · 23×11)",
           "notes": "NOUVEAU RÉFÉRENTIEL poulie salle d'origine. 📈 Charge montée 18kg → 23kg (+5kg) sur les 2 séries. Chute S2 15→11 : fatigue de fin, normale après la montée de charge. ⚠ Charge non comparable au 45kg de l'autre salle",
-          "salle": "origine"
+          "salle": "origine",
+          "a_calibrer": true
         }
       ]
     },
@@ -318,10 +333,12 @@
       "exercices": [
         {
           "nom": "Tirage vertical (lat pulldown)",
+          "emoji": "🧗",
           "type": "compound",
           "series": 4,
           "reps": "8-12",
           "repos": "2 min",
+          "repos_s": 120,
           "rir": 1,
           "tempo": "2011",
           "last_performance": {
@@ -338,35 +355,40 @@
               10
             ]
           },
-          "objectif_next": "52kg×10-10-10-10 (verrouiller les 4 séries pleines avant de monter à 57kg)",
-          "notes": "POINT FAIBLE — largeur dos. Prise large. Nouvelle baseline 52kg (S3 en chute à 6, S4 descendue à 45kg).",
+          "objectif_next": "Séance de recalibrage : trouve la charge à RIR 2 (dernière connue en août : 52×10 · 52×10 · 52×6 · 45×10)",
+          "notes": "POINT FAIBLE — largeur dos. Prise large. ⚠ Salle d'origine — matériel différent, charges NON comparables à l'autre salle : nouvelle baseline. S3 en chute (6 reps), S4 descendue à 45kg.",
           "point_faible": true,
-          "note_salle": "Salle d'origine depuis ~2 semaines — charges NON comparables à l'autre salle : ces valeurs sont les nouvelles baselines."
+          "salle": "origine",
+          "a_calibrer": true
         },
         {
           "nom": "Rowing machine assis (appui poitrine)",
+          "emoji": "🚣",
           "type": "compound",
           "series": 3,
           "reps": "10-12",
           "repos": "2 min",
+          "repos_s": 120,
           "rir": 1,
           "tempo": "2010",
           "last_performance": {
             "note": "Nouvelle machine — calibration à faire (1re séance : charge qui donne 10-12 reps à RIR 1)"
           },
-          "objectif_next": "Calibration : trouver la charge pour 3×10-12 à RIR 1. Appui poitrine = dos verrouillé, pas de triche lombaire",
+          "objectif_next": "Séance de recalibrage : trouve la charge à RIR 2 (pas de référence connue)",
           "notes": "🔁 Remplace le rowing À LA BARRE (règle : machines uniquement, 27/08/2026). Travail d'ÉPAISSEUR du dos, complémentaire du tirage horizontal poulie basse (déjà au programme). Nouveau référentiel — non comparable au 30kg barre. ⚠ Salle d'origine",
-          "note_salle": "Salle d'origine depuis ~2 semaines — charges NON comparables à l'autre salle : ces valeurs sont les nouvelles baselines.",
+          "salle": "origine",
           "ancienne_reference_barre": "Rowing barre droite 30kg×12-12-12 trajectoire nombril propre (salle d'origine) — NON transposable",
           "materiel": "machine",
           "a_calibrer": true
         },
         {
           "nom": "Tirage horizontal poulie basse",
+          "emoji": "🪢",
           "type": "compound",
           "series": 3,
           "reps": "8-12",
           "repos": "90s",
+          "repos_s": 90,
           "rir": 2,
           "tempo": "2011",
           "last_performance": {
@@ -381,35 +403,40 @@
               12
             ]
           },
-          "objectif_next": "32kg×12-12-12 propre, puis monter à 36kg (45kg trop lourd en S1)",
-          "notes": "S1 à 45kg trop lourde (6 reps) → repli à 32kg×12-12. Travailler à 32kg avant progression.",
-          "note_salle": "Salle d'origine depuis ~2 semaines — charges NON comparables à l'autre salle : ces valeurs sont les nouvelles baselines."
+          "objectif_next": "Séance de recalibrage : trouve la charge à RIR 2 (dernière connue en août : 45×6 · 32×12 · 32×12)",
+          "notes": "S1 lancée à 45kg trop lourde (6 reps) → repli à 32kg×12-12. Démarrer directement à 32kg. ⚠ Salle d'origine — matériel différent, charges NON comparables à l'autre salle : nouvelle baseline.",
+          "salle": "origine",
+          "a_calibrer": true
         },
         {
           "nom": "Curl biceps machine (pupitre)",
+          "emoji": "💪",
           "type": "isolation",
           "series": 3,
           "reps": "8",
           "repos": "60s",
+          "repos_s": 60,
           "rir": 1,
           "tempo": "2011",
           "last_performance": {
             "note": "Nouvelle machine — calibration à faire (1re séance : charge qui donne 8-10 reps à RIR 1)"
           },
-          "objectif_next": "Calibration : trouver la charge pour 3×8 à RIR 1 SANS effondrement de S2 (c'était le défaut à la barre EZ)",
+          "objectif_next": "Séance de recalibrage : trouve la charge à RIR 2 (pas de référence connue)",
           "notes": "POINT FAIBLE — densité bras. 🔁 Remplace le curl À LA BARRE EZ (règle : machines uniquement, 27/08/2026). La machine bloque le buste : plus de triche à la fatigue, ce qui devrait régler la chute S2 (10→6) constatée à la barre. ⚠ Salle d'origine",
           "point_faible": true,
-          "note_salle": "Salle d'origine depuis ~2 semaines — charges NON comparables à l'autre salle : ces valeurs sont les nouvelles baselines.",
+          "salle": "origine",
           "ancienne_reference_barre": "Curl barre EZ 27kg×10-6-9 (salle d'origine) — NON transposable",
           "materiel": "machine",
           "a_calibrer": true
         },
         {
           "nom": "Curl marteau haltères",
+          "emoji": "🔨",
           "type": "isolation",
           "series": 3,
           "reps": "8-10",
           "repos": "60s",
+          "repos_s": 60,
           "rir": 2,
           "tempo": "2011",
           "last_performance": {
@@ -424,10 +451,11 @@
               7
             ]
           },
-          "objectif_next": "12,5kg×6-6-6 sans redescente (stabiliser la charge avant de viser 8 reps)",
-          "notes": "POINT FAIBLE. Plus de dropset : 12,5kg puis stabilisation propre à 10kg — données enfin exploitables.",
+          "objectif_next": "Séance de recalibrage : trouve la charge à RIR 2 (dernière connue en août : 12,5×6 · 10×9 · 10×7)",
+          "notes": "POINT FAIBLE. Plus de dropset : 12,5kg×6 puis stabilisation propre à 10kg — données enfin exploitables. ⚠ Salle d'origine — matériel différent, charges NON comparables à l'autre salle : nouvelle baseline.",
           "point_faible": true,
-          "note_salle": "Salle d'origine depuis ~2 semaines — charges NON comparables à l'autre salle : ces valeurs sont les nouvelles baselines."
+          "salle": "origine",
+          "a_calibrer": true
         }
       ]
     },
@@ -436,44 +464,52 @@
       "exercices": [
         {
           "nom": "Squat Smith Machine",
+          "emoji": "🦵",
           "type": "compound",
           "series": 4,
           "reps": "8-12",
           "repos": "2-3 min",
+          "repos_s": 150,
           "rir": 1,
           "tempo": "3010",
           "last_performance": {
-            "note": "Session calibration technique — charges légères"
+            "note": "Calibration technique — charges légères"
           },
-          "objectif_next": "Stabiliser technique avant progression charge",
-          "notes": "Première session trackée — apprentissage technique (profondeur, alignement genoux, colonne neutre). Pieds légèrement avancés devant l'axe, dos neutre"
+          "objectif_next": "Séance de recalibrage : trouve la charge à RIR 2 (pas de référence connue)",
+          "notes": "Apprentissage technique (profondeur, alignement genoux). Pieds légèrement avancés, dos neutre",
+          "a_calibrer": true
         },
         {
           "nom": "Leg Press assis",
+          "emoji": "🦿",
           "type": "compound",
           "series": 3,
           "reps": "10-15",
           "repos": "90-120s",
+          "repos_s": 120,
           "rir": 2,
           "tempo": "2011",
           "last_performance": {
             "note": "En cours — pas encore finalisé"
           },
-          "objectif_next": "Finaliser et logger la session",
-          "notes": "Pieds centrés largeur épaules, jamais de verrouillage genoux"
+          "objectif_next": "Séance de recalibrage : trouve la charge à RIR 2 (pas de référence connue)",
+          "notes": "Pieds centrés largeur épaules, jamais de verrouillage genoux",
+          "a_calibrer": true
         },
         {
           "nom": "Leg Curl assis machine",
+          "emoji": "🏋️",
           "type": "compound",
           "series": 3,
           "reps": "8-12",
           "repos": "2 min",
+          "repos_s": 120,
           "rir": 1,
           "tempo": "3010",
           "last_performance": {
             "note": "Nouvelle machine — calibration à faire (1re séance : charge qui donne 8-12 reps à RIR 1)"
           },
-          "objectif_next": "Calibration : trouver la charge pour 3×8-12 à RIR 1",
+          "objectif_next": "Séance de recalibrage : trouve la charge à RIR 2 (pas de référence connue)",
           "notes": "🔁 Remplace le Romanian Deadlift À LA BARRE (règle : machines uniquement, 27/08/2026). Cible les ischios comme le RDL. Hanche FLÉCHIE ici vs allongée sur le Leg Curl allongé déjà au programme → angle différent, ce n'est pas un doublon (chef long des ischios mieux sollicité assis).",
           "ancienne_reference_barre": "Romanian Deadlift barre — jamais loggé (exercice à la barre, non réalisé)",
           "materiel": "machine",
@@ -481,10 +517,12 @@
         },
         {
           "nom": "Leg Curl allongé",
+          "emoji": "🦵",
           "type": "isolation",
           "series": 3,
           "reps": "12-15",
           "repos": "60-90s",
+          "repos_s": 75,
           "rir": 2,
           "tempo": "2011",
           "last_performance": {
@@ -499,15 +537,18 @@
               6
             ]
           },
-          "objectif_next": "55kg×10-8-8 (progression reps)",
-          "notes": "Bassin plaqué contre le coussin. 1s contraction en haut"
+          "objectif_next": "Séance de recalibrage : trouve la charge à RIR 2 (dernière connue en août : 55×8 · 55×7 · 55×6)",
+          "notes": "Bassin plaqué contre le coussin. 1s contraction en haut",
+          "a_calibrer": true
         },
         {
           "nom": "Leg Extension",
+          "emoji": "🦿",
           "type": "isolation",
           "series": 2,
           "reps": "15-20",
           "repos": "60s",
+          "repos_s": 60,
           "rir": 2,
           "tempo": "contrôlé",
           "last_performance": {
@@ -522,21 +563,24 @@
               10
             ]
           },
-          "objectif_next": "100kg×12-12 (progression reps)",
-          "notes": "Pas de blocage brutal en extension totale. Ordre non standard (passé en premier)"
+          "objectif_next": "Séance de recalibrage : trouve la charge à RIR 2 (dernière connue en août : 80×13 · 100×10 · 100×10)",
+          "notes": "Pas de blocage brutal en extension totale",
+          "a_calibrer": true
         },
         {
           "nom": "Abducteurs machine (fessiers)",
+          "emoji": "🍑",
           "type": "compound",
           "series": 3,
           "reps": "10-12",
           "repos": "90s",
+          "repos_s": 90,
           "rir": 2,
           "tempo": "2011",
           "last_performance": {
             "note": "Nouvelle machine — calibration à faire (1re séance : charge qui donne 12-15 reps à RIR 2)"
           },
-          "objectif_next": "Calibration : 3×12-15 à RIR 2, buste légèrement penché en avant pour cibler le moyen fessier",
+          "objectif_next": "Séance de recalibrage : trouve la charge à RIR 2 (pas de référence connue)",
           "notes": "POINT FAIBLE — fessiers. 🔁 Remplace le Hip Thrust À LA BARRE (règle : machines uniquement, 27/08/2026). ⚠ SI la salle a une machine Hip Thrust dédiée, la privilégier (mouvement composé, plus complet sur le grand fessier) et me le dire pour que je bascule.",
           "point_faible": true,
           "ancienne_reference_barre": "Hip Thrust barre — jamais loggé (exercice à la barre, non réalisé)",
@@ -547,14 +591,28 @@
     }
   },
   "derniere_seance": {
-    "type": "PUSH_B",
-    "date": "27/08/2026",
-    "exercices_complets": true,
+    "type": null,
     "prochaine_seance": "PUSH_A",
-    "salle": "origine",
-    "note": "Salle d'origine — matériel différent, charges non comparables aux séances de l'autre salle (ni au 30kg/45kg). 🎯 Dips : objectif 4×10 à 6,8kg d'aide ATTEINT (réglage fiabilisé) → passer à 5kg d'aide. 📈 Extensions triceps : nouveau référentiel poulie d'origine, 18kg → 23kg (15-11). ⚠ Élévations latérales (point faible épaules) : S2 en chute à 7 reps, tenir S1-S2 à 7,5kg. (Rotation : la séance LEGS A BIEN ÉTÉ FAITE entre le PULL_A du 24/08 et ce PUSH_B, mais non loggée — le programme LEGS contient des exercices à la barre que Kevin ne fait pas (machines uniquement). ✅ CORRIGÉ le 27/08 : les 5 exercices à la barre du programme sont remplacés par des machines (à calibrer à la prochaine séance). Prochaine séance : PUSH_A.)"
+    "note": "Repart de zéro (recalibrage des charges) - rotation basée sur la dernière séance faite, pas sur le jour."
   },
-  "historique_sessions": [
+  "historique_sessions": [],
+  "contraintes_materiel": {
+    "regle": "MACHINES UNIQUEMENT — aucun exercice à la barre (barbell / barre EZ / barre droite).",
+    "detail": "Tout exercice à la barre doit être remplacé par son équivalent machine ou poulie. Les haltères restent OK (élévations latérales, curl marteau, développé incliné). Le Smith Machine est considéré comme une machine.",
+    "consequence": "Les séances comportant encore des exercices à la barre ne sont pas loggées par Kevin (cas du LEGS d'août 2026).",
+    "a_corriger": [],
+    "date_regle": "27/08/2026",
+    "statut": "✅ Appliqué le 27/08/2026 — plus aucun exercice à la barre dans le programme.",
+    "remplacements_effectues": {
+      "PUSH_A : Développé couché barre": "Développé couché machine (chest press)",
+      "PULL_A : Rowing barre droite": "Rowing machine assis (appui poitrine)",
+      "PULL_A : Curl barre EZ (pupitre isolé)": "Curl biceps machine (pupitre)",
+      "LEGS : Romanian Deadlift barre": "Leg Curl assis machine",
+      "LEGS : Hip Thrust (barre)": "Abducteurs machine (fessiers)"
+    },
+    "note_calibration": "Les 5 exercices remplacés sont marqués a_calibrer=true : nouvelle machine = nouveau référentiel de charge. L'ancienne charge à la barre est conservée dans ancienne_reference_barre à titre d'archive, elle n'est PAS transposable."
+  },
+  "historique_archive_avant_reset": [
     {
       "date": "27/08/2026",
       "type": "PUSH_B",
@@ -664,21 +722,5 @@
         "Extensions triceps": "45kg×18, 45kg×11"
       }
     }
-  ],
-  "contraintes_materiel": {
-    "regle": "MACHINES UNIQUEMENT — aucun exercice à la barre (barbell / barre EZ / barre droite).",
-    "detail": "Tout exercice à la barre doit être remplacé par son équivalent machine ou poulie. Les haltères restent OK (élévations latérales, curl marteau, développé incliné). Le Smith Machine est considéré comme une machine.",
-    "consequence": "Les séances comportant encore des exercices à la barre ne sont pas loggées par Kevin (cas du LEGS d'août 2026).",
-    "a_corriger": [],
-    "date_regle": "27/08/2026",
-    "statut": "✅ Appliqué le 27/08/2026 — plus aucun exercice à la barre dans le programme.",
-    "remplacements_effectues": {
-      "PUSH_A : Développé couché barre": "Développé couché machine (chest press)",
-      "PULL_A : Rowing barre droite": "Rowing machine assis (appui poitrine)",
-      "PULL_A : Curl barre EZ (pupitre isolé)": "Curl biceps machine (pupitre)",
-      "LEGS : Romanian Deadlift barre": "Leg Curl assis machine",
-      "LEGS : Hip Thrust (barre)": "Abducteurs machine (fessiers)"
-    },
-    "note_calibration": "Les 5 exercices remplacés sont marqués a_calibrer=true : nouvelle machine = nouveau référentiel de charge. L'ancienne charge à la barre est conservée dans ancienne_reference_barre à titre d'archive, elle n'est PAS transposable."
-  }
+  ]
 }
