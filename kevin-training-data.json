@@ -116,14 +116,23 @@
           "rir": 1,
           "tempo": "3010",
           "last_performance": {
-            "note": "Nouvelle machine — calibration à faire (1re séance : chercher la charge qui donne 8-12 reps à RIR 1)"
+            "poids": [
+              40.0,
+              40.0,
+              40.0
+            ],
+            "reps": [
+              10,
+              10,
+              8
+            ],
+            "date": "2026-11-03"
           },
-          "objectif_next": "Séance de recalibrage : trouve la charge à RIR 2 (pas de référence connue)",
+          "objectif_next": "40kg×11-11-9-9 (+1 rep par série)",
           "notes": "🔁 Remplace le développé couché À LA BARRE (règle : machines uniquement, 27/08/2026). Nouveau référentiel machine — charge non comparable au 60kg barre ni à l'autre salle. ⚠ Salle d'origine",
           "salle": "origine",
           "ancienne_reference_barre": "Développé couché barre 60kg×8-6-6-6 (salle d'origine) — NON transposable, la machine a son propre référentiel",
-          "materiel": "machine",
-          "a_calibrer": true
+          "materiel": "machine"
         },
         {
           "nom": "Développé incliné haltères",
@@ -137,21 +146,20 @@
           "tempo": "3010",
           "last_performance": {
             "poids": [
-              15,
-              15,
-              15
+              17.5,
+              17.5,
+              17.5
             ],
             "reps": [
-              12,
-              12,
-              12
+              10,
+              9,
+              8
             ],
-            "rir_estime": 1
+            "date": "2026-11-03"
           },
-          "objectif_next": "Séance de recalibrage : trouve la charge à RIR 2 (dernière connue en août : 15×12 · 15×12 · 15×12)",
+          "objectif_next": "17,5kg×11-10-9 (+1 rep par série)",
           "notes": "🎯 OBJECTIF ATTEINT : 15kg×12-12-12 structure régulière. Prêt à monter à 17,5kg. ⚠ Salle d'origine",
-          "salle": "origine",
-          "a_calibrer": true
+          "salle": "origine"
         },
         {
           "nom": "Dips assistés (prise large)",
@@ -165,21 +173,20 @@
           "tempo": "2010",
           "last_performance": {
             "assistance": [
-              15,
-              15,
-              15
+              15.0,
+              15.0,
+              15.0
             ],
             "reps": [
               10,
               10,
-              7
+              9
             ],
-            "rir_estime": 1
+            "date": "2026-11-03"
           },
-          "objectif_next": "Séance de recalibrage : trouve la charge à RIR 2 (dernière connue en août : aide 15kg×10 · aide 15kg×10 · aide 15kg×7)",
+          "objectif_next": "aide 15kg×10-10-10 (+1 rep par série)",
           "notes": "⚠ Salle d'origine — machine différente, assistance non comparable au 35kg de l'autre salle. S3 en baisse (10→7) : fatigue de fin",
-          "salle": "origine",
-          "a_calibrer": true
+          "salle": "origine"
         },
         {
           "nom": "Élévations latérales haltères",
@@ -193,22 +200,21 @@
           "tempo": "2011",
           "last_performance": {
             "poids": [
-              5,
-              5,
-              5
+              6.0,
+              6.0,
+              6.0
             ],
             "reps": [
               12,
-              9,
-              7
+              11,
+              10
             ],
-            "rir_estime": 0
+            "date": "2026-11-03"
           },
-          "objectif_next": "Séance de recalibrage : trouve la charge à RIR 2 (dernière connue en août : 5×12 · 5×9 · 5×7)",
+          "objectif_next": "6kg×12-12-11 (+1 rep par série)",
           "notes": "POINT FAIBLE — priorité épaules. ⚠ Régression S2 (12→9) et S3 (10→7) vs dernière séance (12-12-10). Fatigue cumulative en fin de séance. Volume 2x/semaine. ⚠ Salle d'origine",
           "point_faible": true,
-          "salle": "origine",
-          "a_calibrer": true
+          "salle": "origine"
         },
         {
           "nom": "Extensions triceps poulie haute",
@@ -222,19 +228,18 @@
           "tempo": "2011",
           "last_performance": {
             "poids": [
-              18,
-              23
+              20.0,
+              20.0
             ],
             "reps": [
               15,
               15
             ],
-            "rir_estime": 1
+            "date": "2026-11-03"
           },
-          "objectif_next": "Séance de recalibrage : trouve la charge à RIR 2 (dernière connue en août : 18×15 · 23×15)",
+          "objectif_next": "21kg×15-15 (montée de charge +1kg)",
           "notes": "⚠ Salle d'origine, nouvelle poulie (charge non comparable au 45kg de l'autre salle). Plus régulier (15-15 vs l'ancien gap 18-11)",
-          "salle": "origine",
-          "a_calibrer": true
+          "salle": "origine"
         }
       ]
     },
@@ -591,11 +596,24 @@
     }
   },
   "derniere_seance": {
-    "type": null,
-    "prochaine_seance": "PUSH_A",
-    "note": "Repart de zéro (recalibrage des charges) - rotation basée sur la dernière séance faite, pas sur le jour."
+    "type": "PUSH_A",
+    "date": "2026-11-03",
+    "exercices_loggues": 5,
+    "prochaine_seance": "PULL_A"
   },
-  "historique_sessions": [],
+  "historique_sessions": [
+    {
+      "date": "03/11/2026",
+      "type": "PUSH_A",
+      "resultats": {
+        "Développé couché machine (chest press)": "40kg×10, 40kg×10, 40kg×8",
+        "Développé incliné haltères": "17,5kg×10, 17,5kg×9, 17,5kg×8",
+        "Dips assistés (prise large)": "aide 15kg×10, aide 15kg×10, aide 15kg×9",
+        "Élévations latérales haltères": "6kg×12, 6kg×11, 6kg×10",
+        "Extensions triceps poulie haute": "20kg×15, 20kg×15"
+      }
+    }
+  ],
   "contraintes_materiel": {
     "regle": "MACHINES UNIQUEMENT — aucun exercice à la barre (barbell / barre EZ / barre droite).",
     "detail": "Tout exercice à la barre doit être remplacé par son équivalent machine ou poulie. Les haltères restent OK (élévations latérales, curl marteau, développé incliné). Le Smith Machine est considéré comme une machine.",
