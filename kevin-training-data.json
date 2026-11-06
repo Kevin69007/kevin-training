@@ -606,7 +606,7 @@
   "derniere_seance": {
     "type": "PUSH_A",
     "date": "2026-11-06",
-    "exercices_loggues": 1,
+    "exercices_loggues": 5,
     "prochaine_seance": "PULL_A"
   },
   "historique_sessions": [
@@ -614,7 +614,11 @@
       "date": "06/11/2026",
       "type": "PUSH_A",
       "resultats": {
-        "Développé incliné machine (incline press)": "40kg×10, 40kg×8, 40kg×6"
+        "Développé couché machine (chest press)": "36kg×11, 36kg×10, 36kg×10, 36kg×8",
+        "Développé incliné machine (incline press)": "40kg×10, 40kg×8, 40kg×6",
+        "Dips assistés (prise large)": "aide 13,6kg×10, aide 13,6kg×10, aide 13,6kg×9",
+        "Élévations latérales haltères": "5kg×12, 5kg×10, 5kg×7",
+        "Extensions triceps poulie haute": "18kg×10, 18kg×7"
       }
     }
   ],
