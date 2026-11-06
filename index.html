@@ -111,7 +111,7 @@
 const DATA = {
   "PUSH_A": {"nom":"Push A","exercices":[
     {"nom":"Développé couché machine (chest press)","emoji":"🏋️","type":"compound","series":4,"reps":"8-12","repos":"2-3 min","repos_s":150,"rir":1,"tempo":"3010","last_performance":{"poids":[36.0,36.0,36.0,36.0],"reps":[11,10,10,8],"date":"2026-11-06"},"objectif_next":"36kg×12-11-11-9 (+1 rep par série)","notes":"🔁 Remplace le développé couché À LA BARRE (règle : machines uniquement, 27/08/2026). Nouveau référentiel machine — charge non comparable au 60kg barre ni à l'autre salle. ⚠ Salle d'origine","salle":"origine","ancienne_reference_barre":"Développé couché barre 60kg×8-6-6-6 (salle d'origine) — NON transposable, la machine a son propre référentiel","materiel":"machine"},
-    {"nom":"Développé incliné haltères","emoji":"💪","type":"compound","series":3,"reps":"8-12","repos":"2 min","repos_s":120,"rir":1,"tempo":"3010","last_performance":{"poids":[40.0,40.0,40.0],"reps":[10,8,6],"date":"2026-11-06"},"objectif_next":"40kg×11-9-7 (+1 rep par série)","notes":"🎯 OBJECTIF ATTEINT : 15kg×12-12-12 structure régulière. Prêt à monter à 17,5kg. ⚠ Salle d'origine","salle":"origine"},
+    {"nom":"Développé incliné machine (incline press)","emoji":"💪","type":"compound","series":3,"reps":"8-12","repos":"2 min","repos_s":120,"rir":1,"tempo":"3010","last_performance":{"poids":[40.0,40.0,40.0],"reps":[10,8,6],"date":"2026-11-06"},"objectif_next":"40kg×11-9-7 (+1 rep par série)","notes":"🎯 OBJECTIF ATTEINT : 15kg×12-12-12 structure régulière. Prêt à monter à 17,5kg. ⚠ Salle d'origine","salle":"origine","noms_precedents":["Développé incliné haltères"],"ancien_nom":"Développé incliné haltères","materiel":"machine","photo":"photos/developpe-incline-machine-incline-press.jpg"},
     {"nom":"Dips assistés (prise large)","emoji":"🤸","type":"compound","series":3,"reps":"10","repos":"90s","repos_s":90,"rir":2,"tempo":"2010","last_performance":{"assistance":[13.6,13.6,13.6],"reps":[10,10,9],"date":"2026-11-06"},"objectif_next":"aide 13,6kg×10-10-10 (+1 rep par série)","notes":"⚠ Salle d'origine — machine différente, assistance non comparable au 35kg de l'autre salle. S3 en baisse (10→7) : fatigue de fin","salle":"origine"},
     {"nom":"Élévations latérales haltères","emoji":"🛩️","type":"isolation","series":3,"reps":"10-12","repos":"60s","repos_s":60,"rir":2,"tempo":"2011","last_performance":{"poids":[5.0,5.0,5.0],"reps":[12,10,7],"date":"2026-11-06"},"objectif_next":"5kg×12-11-8 (+1 rep par série)","notes":"POINT FAIBLE — priorité épaules. ⚠ Régression S2 (12→9) et S3 (10→7) vs dernière séance (12-12-10). Fatigue cumulative en fin de séance. Volume 2x/semaine. ⚠ Salle d'origine","point_faible":true,"salle":"origine"},
     {"nom":"Extensions triceps poulie haute","emoji":"🔻","type":"isolation","series":2,"reps":"15","repos":"60s","repos_s":60,"rir":2,"tempo":"2011","last_performance":{"poids":[18.0,18.0],"reps":[10,7],"date":"2026-11-06"},"objectif_next":"18kg×11-8 (+1 rep par série)","notes":"⚠ Salle d'origine, nouvelle poulie (charge non comparable au 45kg de l'autre salle). Plus régulier (15-15 vs l'ancien gap 18-11)","salle":"origine"}
@@ -168,6 +168,11 @@ function galleryUrls(nom){
   return s ? [IMG_BASE+s+'/0.jpg', IMG_BASE+s+'/1.jpg'] : [];
 }
 const GALLERY_LABELS = ['Départ', 'Exécution'];
+const COACH_BOT = 'hermes_syyctrcln7vazisy_bot';
+function changeUrl(sess, ei, ex){
+  const t = "🔄 Changer l'exercice " + (ei+1) + " de " + sess + " (" + ex.nom + "). Voici la machine que j'utilise à la place :";
+  return 'https://t.me/' + COACH_BOT + '?text=' + encodeURIComponent(t);
+}
 
 // Fallback si une photo de la galerie ne charge pas.
 // Si une seule des deux vues manque (ex: 1.jpg en 404) → on retire proprement la vignette
@@ -407,26 +412,27 @@ function renderApp(key){
     }
 
     // Galerie photos (Départ → Exécution)
-    const gal = galleryUrls(ex.nom);
+    const gal = ex.photo ? [ex.photo] : galleryUrls(ex.nom);
+    const galLabels = ex.photo ? ['Ta machine'] : GALLERY_LABELS;
     let galHTML = '';
     if(gal.length){
       galHTML = `
         <div class="mb-3">
-          <div class="text-[10px] uppercase tracking-wide text-gray-500 mb-1.5 font-bold">📸 Départ → Exécution</div>
-          <div class="grid grid-cols-2 gap-2">
+          <div class="text-[10px] uppercase tracking-wide text-gray-500 mb-1.5 font-bold">${ex.photo ? '📸 Ta machine' : '📸 Départ → Exécution'}</div>
+          <div class="grid ${gal.length>1?'grid-cols-2':'grid-cols-1'} gap-2">
             ${gal.map((u,gi)=>`
               <figure class="gal-item relative bg-white rounded-xl overflow-hidden cursor-zoom-in active:scale-[.98] transition" data-idx="${gi}">
-                <img src="${u}" alt="${ex.nom} — ${GALLERY_LABELS[gi]||''}" loading="lazy"
+                <img src="${u}" alt="${ex.nom} — ${galLabels[gi]||''}" loading="lazy"
                   data-emoji="${ex.emoji||'🏋️'}" data-nom="${ex.nom}" onerror="imgFail(this)"
-                  class="w-full object-contain" style="height:120px">
-                <figcaption class="absolute bottom-0 inset-x-0 bg-black/60 text-[9px] font-bold text-center py-1 text-gray-100">${GALLERY_LABELS[gi]||('Vue '+(gi+1))}</figcaption>
+                  class="w-full object-contain" style="height:${ex.photo?220:120}px">
+                <figcaption class="absolute bottom-0 inset-x-0 bg-black/60 text-[9px] font-bold text-center py-1 text-gray-100">${galLabels[gi]||('Vue '+(gi+1))}</figcaption>
               </figure>`).join('')}
           </div>
         </div>`;
     }
 
     // Encart muscles ciblés (muscle en rouge)
-    const mIds = MUSCLE_MAP[ex.nom] || [];
+    const mIds = MUSCLE_MAP[ex.nom] || MUSCLE_MAP[ex.ancien_nom] || [];
     let muscleHTML = '';
     if(mIds.length){
       muscleHTML = `
@@ -453,6 +459,8 @@ function renderApp(key){
           <span>Tempo ${ex.tempo}</span>
           <span>Repos ${ex.repos}</span>
         </div>
+        <a href="${changeUrl(s.nom, ei, ex)}" target="_blank" rel="noopener"
+          class="inline-flex items-center gap-1.5 mt-2 bg-card2/60 hover:bg-card2 active:scale-95 transition border border-white/10 text-gray-300 text-xs font-bold px-3 py-2 rounded-xl">🔄 Changer l'exercice</a>
       </div>
 
       <div class="px-3 pb-3">

@@ -137,7 +137,7 @@
           "materiel": "machine"
         },
         {
-          "nom": "Développé incliné haltères",
+          "nom": "Développé incliné machine (incline press)",
           "emoji": "💪",
           "type": "compound",
           "series": 3,
@@ -161,7 +161,13 @@
           },
           "objectif_next": "40kg×11-9-7 (+1 rep par série)",
           "notes": "🎯 OBJECTIF ATTEINT : 15kg×12-12-12 structure régulière. Prêt à monter à 17,5kg. ⚠ Salle d'origine",
-          "salle": "origine"
+          "salle": "origine",
+          "noms_precedents": [
+            "Développé incliné haltères"
+          ],
+          "ancien_nom": "Développé incliné haltères",
+          "materiel": "machine",
+          "photo": "photos/developpe-incline-machine-incline-press.jpg"
         },
         {
           "nom": "Dips assistés (prise large)",
@@ -608,7 +614,7 @@
       "date": "06/11/2026",
       "type": "PUSH_A",
       "resultats": {
-        "Développé incliné haltères": "40kg×10, 40kg×8, 40kg×6"
+        "Développé incliné machine (incline press)": "40kg×10, 40kg×8, 40kg×6"
       }
     }
   ],
